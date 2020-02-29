@@ -1,10 +1,13 @@
 # Computer Science - Concepts Techniques and Technologies
 This repository aims to store my general studies on concepts, new technologies and techniques of computer science.
 
+* [Spring](https://github.com/AugustoCalado/Spring-Framework-Studies)
+
 * Programming languages
   * [Java](Java-Studies)
   * [Kotlin](https://github.com/AugustoCalado/Kotlin-Studies)
   * [Python](https://github.com/AugustoCalado/Python-Studies)
+ 
  
 * Aspect Oriented Programming
 * Clean Architeture
@@ -21,7 +24,13 @@ This repository aims to store my general studies on concepts, new technologies a
 * Domain Driven Development - DDD
 * [Test Driven Development - TDD](https://github.com/AugustoCalado/Test-Driven-Development-Studies)
 * Backends For Frontends - BFF
+* [Hateoas](https://github.com/AugustoCalado/Spring-Hateoas-Studies)
+
+
 * [GIT](https://github.com/AugustoCalado/Git-Studies)
+* [Docker](https://github.com/AugustoCalado/Docker-Studies)
+* Swagger
+
 
 * [Data Bases](https://github.com/AugustoCalado/Data-Base-Studies)
   * PostgreSQL
@@ -29,9 +38,11 @@ This repository aims to store my general studies on concepts, new technologies a
   * ElasticSearch
   * MongoDB
 
+
 * Cloud Platforms and Tools
   * Google Cloud Platform
   * [AWS](https://github.com/AugustoCalado/AWS-Studies)
+  
   
 * Methodologies
   * Objectives and Key Results
