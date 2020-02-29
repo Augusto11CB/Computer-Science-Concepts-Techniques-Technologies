@@ -23,10 +23,15 @@ This repository aims to store my general studies on concepts, new technologies a
 * Backends For Frontends - BFF
 * [GIT](https://github.com/AugustoCalado/Git-Studies)
 
+* [Data Bases](https://github.com/AugustoCalado/Data-Base-Studies)
+  * PostgreSQL
+  * MySQL
+  * ElasticSearch
+  * MongoDB
 
 * Cloud Platforms and Tools
   * Google Cloud Platform
-  * AWS
+  * [AWS](https://github.com/AugustoCalado/AWS-Studies)
   
 * Methodologies
   * Objectives and Key Results
