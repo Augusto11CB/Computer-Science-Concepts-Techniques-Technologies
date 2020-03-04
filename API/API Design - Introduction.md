@@ -26,8 +26,8 @@ Real time communication will be splited  into two broad categories 1.  The ﬁrs
 ### Client-driven integration
 when a user interacts with the client, the  client knows exactly when data changes, so it can call the API  immediately to let the server know. There's no delay (hence it's realtime) and the process is eﬃcient because only one request is made for each action taken by a person.
 
-###Server Driven integration
-the data is changing  on the server and the client needs to know about it. Yet, if server can't  make requests, since it
+### Server Driven integration
+The data is changing  on the server and the client needs to know about it. Yet, if server can't  make requests, since it
 
 **Polling**
 When the client is the only one who can make requests, the simplest  solution to keep it up-to-date with the server is for the client to simply  ask the server for updates. This can be accomplished by repeatedly  requesting the same resource
@@ -40,7 +40,7 @@ Long  polling uses the same idea of the client repeatedly asking the server for 
 **Long polling concerns**
 There are concerns like how many requests  can the server hold on to at a time, or how to recover if the client or  server loses its connection.
 
-Webhooks
+**Webhooks**
 webhooks is a technique where the client both makes requests and listens for them,  allowing the server to easily push updates to it.
 
 webhooks  requires the client to provide a Callback URL where it can receive  events, and the server to have a place for a person to enter that  Callback URL. From a  technical perspective the client became a service too, by listening for requests, enabling two-way  communication.
