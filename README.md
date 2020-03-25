@@ -12,6 +12,7 @@ This repository aims to store my general studies on concepts, new technologies a
 * Aspect Oriented Programming
 * Clean Architeture
 * [SOLID - Design Principles](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/SOLID)
+* [Design Patterns](https://github.com/AugustoCalado/Design-Patterns)
 * [API Design](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/API)
   * API First
 * [12 Factor App](https://will.koffel.org/post/2014/12-factor-apps-in-plain-english/)
