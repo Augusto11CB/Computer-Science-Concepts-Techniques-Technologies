@@ -15,7 +15,7 @@ This repository aims to store my general studies on concepts, new technologies a
 * Design Principles
   * [SOLID - Design Principles](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/SOLID)
   * Composing Objects Principle
-  * Principle of Least Knowledge
+  * Least Knowledge Principle
     * Law of Demeter
 * [Design Patterns](https://github.com/AugustoCalado/Design-Patterns)
 * [API Design](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/API)
