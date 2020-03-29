@@ -59,7 +59,7 @@ types of exceptions should match or be subtypes of the ones that the base method
 	*  A subclass shouldn’t strengthen pre-conditions, because if you set a **Square**, immediatly you are saying that witdth and height must be the same, and it is not considered by the superclass, thus here we have a viollation.
 
 ### Interface Segregation Principle
-The principle Interface Segregation states that a class should not be forced to depend on methods it does not use. Meaning that any classes that implement an interface, should not have "dummy" implementations of any methods defined in the interface. Instead, **large interfaces should be splited into smaller generalizations**.
+The principle Interface Segregation states that **a class should not be forced to depend on methods it does not use**. Meaning that any classes that implement an interface, should not have "dummy" implementations of any methods defined in the interface. Instead, **large interfaces should be splited into smaller generalizations**.
 
 * A class should not be forced to depend on methods it does not use
 * Interfaces should be split up in such a way that it can properly describe the separate functionalities of your system
