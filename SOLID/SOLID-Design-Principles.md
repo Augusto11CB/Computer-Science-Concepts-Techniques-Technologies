@@ -1,7 +1,11 @@
 
 
 # Design Principles
-## SOLID
+
+## D.R.Y Principle
+TODO
+
+## SOLID Principles
 
 ### Single Responsibility Principal
 **Definition:**  There should not be more than one reason for a class to change, or  **a class should always handle single functionality**.
