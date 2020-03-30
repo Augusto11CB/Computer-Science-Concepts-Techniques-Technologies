@@ -9,7 +9,7 @@ This repository aims to store my general studies on concepts, new technologies a
   * [Python](https://github.com/AugustoCalado/Python-Studies)
  
  
-* Aspect Oriented Programming
+* [Aspect Oriented Programming](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Aspected-Oriented-Programming)
 * Clean Architeture
   * [Clean Architecture - Spring + Kotlin](https://github.com/AugustoCalado/Clean-Architecture-Spring-Kotlin-POC)
 * Design Principles
