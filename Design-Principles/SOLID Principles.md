@@ -38,7 +38,7 @@ This concept  is critical when developing libraries and frameworks because the c
 A subclass shouldn’t strengthen pre-conditions. That is, a subclass shouldn’t strengthen pre-conditions.  
 **Example:**  Before calling a method that reads from a database you may need to satisfy the precondition that the database connection is open. If the subclass add more conditions, there is a viollation of the principle
 
-* **A subclass shouldn’t strengthen pre-conditions**
+* **A subclass shouldn’t strengthen pre-conditions** // TODO CHANGE THE TOPIC NAME! POST-Execution Requirements is defined here
 A subclass shouldn’t strengthen pre-conditions. This means that the subclass should cause the state of the program to be in the same state as the base class after a method call.
 **Example:**  After calling a method that reads from a database it may be assumed that the database connection is closed after executing a SQL statement. If the subclass remove the condition of close the database conection, there is a viollation of the principle.
 
