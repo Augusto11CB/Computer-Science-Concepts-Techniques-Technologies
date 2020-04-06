@@ -8,7 +8,7 @@ This repository aims to store my general studies on concepts, new technologies a
   * [Kotlin](https://github.com/AugustoCalado/Kotlin-Studies)
   * [Python](https://github.com/AugustoCalado/Python-Studies)
  
- 
+* [Data Structure](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Data-Structures)
 * [Aspect Oriented Programming](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Aspected-Oriented-Programming)
 * Clean Architeture
   * [Clean Architecture - Spring + Kotlin](https://github.com/AugustoCalado/Clean-Architecture-Spring-Kotlin-POC)
