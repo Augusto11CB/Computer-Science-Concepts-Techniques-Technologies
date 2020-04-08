@@ -4,6 +4,8 @@
 ## Consideration
 The content written in this material are the main points explained in the article An Introduction to APIs  by Brian Cooksey.
 
+## What is an API?
+A contract/agreement between different software components on how they should work together
 
 ## Nomenclature
 • SOAP: API architecture known for standardized message formats
@@ -45,5 +47,9 @@ webhooks is a technique where the client both makes requests and listens for the
 
 webhooks  requires the client to provide a Callback URL where it can receive  events, and the server to have a place for a person to enter that  Callback URL. From a  technical perspective the client became a service too, by listening for requests, enabling two-way  communication.
 
-Webhook subscription
+**Webhook subscription**
 Is a process dynamic that not require  a person to manually enter a Callback URL on the server. Examples: HTTP Subscriptions Speciﬁcation, Restful Webhooks,  REST Hooks, and PubSubHubbub.
+
+## Best Practices For Changing APIs
+* Do not change existing public contracts: data classes, signatures
+* Exposes the abstraction to the customers and let them add new features on top of the framework
