@@ -1,21 +1,43 @@
 
 
 # Design Principles
+Improving quality, design and maintainability with Design Principles
 
-## D.R.Y Principle
-TODO
+**Code Fragility** by Robert C. Martin
+> Fragility is the tendency of the sw to break in many places every time it is changed
+
+**Code Rigidity** by Robert C. Martin
+> Rigidity is the tendency for software to be difficult to change, even in simple ways. Every change causes a cascade of subsequent changes in dependent modules
+
+## D.R.Y (Don’t repeat yourself) Principle
+Analysis of the written code and the desire to improve it are always key in software writing.
+
+When writing several classes with similar properties, we may encounter similar problems. This is a sign that the code inside these classes is common and it may indicate that it should be separated into another class that will deal with repetitive tasks in one place. Thanks to this operation, both classes will use the same code, and thus, the probability of error will drop.
+
+## KISS - Keep It Simple, Stupid!
+This rule is often mentioned when discussing architecture or details of building projects. Its essence is striving to maintain an elegant and transparent structure, without adding unnecessary elements.
+
+## SOC - Separation of Concern
+The separation of issues consists in the division of the program into separate modules that overlap with as little functionality as possible. We call this kind of program modular. Each element of the system should have its separate and singular application. The purpose of SoC (Separation of Concern) is to create a system in which each part plays a significant role while maintaining the possibility of maximum adaptation to changes. SoC does not refer only to the system architecture, but to various issues, eg to divide the application into layers (presentation, business logic, access to data, database).
+
+## CQS - Command Query Separation
+It is a rule that says that every method in the system should be classified into one of two groups:
+
+Command - these are methods that change the state of the application and do not return anything.
+Query - these are methods that return something, but do not change the state of the application.
+
 
 ## SOLID Principles
 
 ### Single Responsibility Principal
 **Definition:**  There should not be more than one reason for a class to change, or  **a class should always handle single functionality**.
 
-**Main goal:**  To avoid introducing coupling between functionalities, because there is a chance of breaking coupled functionality when changes are made in of of them. That will require another round of testing to avoid any surprise on the production environment.
+**Main goal:**  To avoid introducing coupling between functionalities, because there is a chance of breaking coupled functionality when changes are made in one of them. That will require another round of testing to avoid any surprise on the production environment.
 
 ### Open/Closed Principle
 
-**Definition:**  Classes, methods or functions should be Open to extension (new functionality) and Closed to modification.  
-**Main goal:**  To prevent someone from changing already tried and tested code and allows the system to be open for extension through the use of inheritance, or interfaces. The main idea of this principle is to keep existing code from breaking when you implement new features.
+**Definition:**  Classes, methods or functions should be Open tofor extension (new functionality) and Closed tofor modification.  
+**ain goal:**  o prevent someone from changing already tried and tested code and allows the system to be open  extension through the use of inheritance, or interfaces. The main idea of this principle is to keep existing code from breaking when you implement new features.
 
 **What does Open to Extension mean?**
 This statement means that when a class is been designed the ideia of that new funcionalities can be added as new requirements are generated must be considered. 
@@ -26,7 +48,10 @@ The statement **closed to extension** means that once a class is developed and t
 Generally extension can be achieved by using abstractions for dependencies, such as abstract classes and interfaces rather than using concrete classes.
 
 
-### Liskov Substitution Principle
+#.
+
+## Liskov Substitution Principle
+
 When extending a class, the subclass (the one which inherits a base class), should be able to be passed in place of objects of
 the parent class without breaking the client code. Meaning that the subclass should remain compatible with the behavior of the superclass. 
 
@@ -38,7 +63,7 @@ This concept  is critical when developing libraries and frameworks because the c
 A subclass shouldn’t strengthen pre-conditions. That is, a subclass shouldn’t strengthen pre-conditions.  
 **Example:**  Before calling a method that reads from a database you may need to satisfy the precondition that the database connection is open. If the subclass add more conditions, there is a viollation of the principle
 
-* **A subclass shouldn’t strengthen pre-conditions** // TODO CHANGE THE TOPIC NAME! POST-Execution Requirements is defined here
+* **A subclass shouldn’t strengthen pre-conditions**
 A subclass shouldn’t strengthen pre-conditions. This means that the subclass should cause the state of the program to be in the same state as the base class after a method call.
 **Example:**  After calling a method that reads from a database it may be assumed that the database connection is closed after executing a SQL statement. If the subclass remove the condition of close the database conection, there is a viollation of the principle.
 
