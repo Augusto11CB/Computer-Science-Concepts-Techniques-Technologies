@@ -26,15 +26,18 @@ It is a rule that says that every method in the system should be classified into
 Command - these are methods that change the state of the application and do not return anything.
 Query - these are methods that return something, but do not change the state of the application.
 
+## Tell, don't ask Principle
+Used to eliminate type casting and checkong
+
 
 ## SOLID Principles
 
-### Single Responsibility Principal
+## Single Responsibility Principal
 **Definition:**  There should not be more than one reason for a class to change, or  **a class should always handle single functionality**.
 
-**Main goal:**  To avoid introducing coupling between functionalities, because there is a chance of breaking coupled functionality when changes are made in one of them. That will require another round of testing to avoid any surprise on the production environment.
+**Main goal:**  To avoid introducing coupling between functionalities, because there is a chance of breaking coupled functionality when changes are made in o of them. That will require another round of testing to avoid any surprise on the production environment.
 
-### Open/Closed Principle
+## Open/Closed Principle
 
 **Definition:**  Classes, methods or functions should be Open tofor extension (new functionality) and Closed tofor modification.  
 **ain goal:**  o prevent someone from changing already tried and tested code and allows the system to be open  extension through the use of inheritance, or interfaces. The main idea of this principle is to keep existing code from breaking when you implement new features.
@@ -48,17 +51,17 @@ The statement **closed to extension** means that once a class is developed and t
 Generally extension can be achieved by using abstractions for dependencies, such as abstract classes and interfaces rather than using concrete classes.
 
 
-#.
-
 ## Liskov Substitution Principle
 
 When extending a class, the subclass (the one which inherits a base class), should be able to be passed in place of objects of
 the parent class without breaking the client code. Meaning that the subclass should remain compatible with the behavior of the superclass. 
 
+**Don't ask if some class "is a" other class, Instead prefer ask _Does the classA fully substitute the classB _**
+
 **One Use Very Important of Liskov Substitution Principle**
 This concept  is critical when developing libraries and frameworks because the classes are going to be used by other people whose code cannot directly be accessed and changed.
 
-#### Liskov Substitution Requirements
+### Liskov Substitution Requirements
 * **A subclass shouldn’t strengthen pre-conditions**
 A subclass shouldn’t strengthen pre-conditions. That is, a subclass shouldn’t strengthen pre-conditions.  
 **Example:**  Before calling a method that reads from a database you may need to satisfy the precondition that the database connection is open. If the subclass add more conditions, there is a viollation of the principle
@@ -87,8 +90,41 @@ types of exceptions should match or be subtypes of the ones that the base method
 **Comments** - Requirements this example does not respect
 	*  A subclass shouldn’t strengthen pre-conditions, because if you set a **Square**, immediatly you are saying that witdth and height must be the same, and it is not considered by the superclass, thus here we have a viollation.
 
-### Interface Segregation Principle
-The principle Interface Segregation states that **a class should not be forced to depend on methods it does not use**. Meaning that any classes that implement an interface, should not have "dummy" implementations of any methods defined in the interface. Instead, **large interfaces should be splited into smaller generalizations**.
+### Exemplos of non-adherence of Liskov Substitution Principle
+
+#### Verify for a specific type 
+The below code snippet receives a set of taks and set the status of each of them to "in progress", except for bug fix that must first be initialized before assuming any status;
+
+```java
+for (Taks t: tasks){
+	if(t instanceof BugFix){
+		BugFix bf = (BugFix) t;
+		bf.initializeBugDescription();
+	}
+    t.setInProgress();
+}
+```
+This kind of approach where for most subtypes, one thing is done, but for particular subtypes something else must be performed. It indicates that the subtypes cannot be fully replace by its base class. In this situation inheritance are not been used properly 
+
+**Solution:** Apply the principle "tell, don't ask"
+```java
+Class BugFix Extends Taks {
+	
+	@Override
+	public void setInProgress()
+    	this.initializeBugDescription();
+	    super;setInProgress();
+
+} 
+// new for loop
+for (Taks t: tasks){
+    t.setInProgress();
+}
+
+```
+
+## Interface Segregation Principle
+The principle Interface Segregation states that **a class should not be forced to depend on methods it does not use**. Meaning that any classes that implement an interface, should not have "dummy" implementations of any methods defined in the interface. Instead, **large interfaces should be splited into smaller generalizations**. If it is not possible use the design pattern Adapter.
 
 * A class should not be forced to depend on methods it does not use
 * Interfaces should be split up in such a way that it can properly describe the separate functionalities of your system
