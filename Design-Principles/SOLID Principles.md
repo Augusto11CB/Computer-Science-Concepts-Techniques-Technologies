@@ -114,7 +114,7 @@ This principle states that high level modules should depend on high level genera
 
 Also, dependency inversion helps in the generalization of the behavior of your concrete classes into abstract classes and interfaces.
 
-![depending-on-abstraction-vs-depending-on-details](depending-on-abstraction-vs-depending-on-details.png)
+![depending-on-abstraction-vs-depending-on-details](resources/depending-on-abstraction-vs-depending-on-details.png)
 
 What are High Level Modules?
 * Modules written to solve real problems and use cases
@@ -126,7 +126,7 @@ What are Low Level Modules?
 * They are considered the "plumbing" of an application
 * These modules tell us "How the software should do various taks"
 
-![Low-ISP-Adherence](Low-ISP-Adherence.png)
+![Low-ISP-Adherence](resources/Low-ISP-Adherence .png)
 
 ![High Level Modules Work Together with Low Level Modules](resources/High-and-Low-Modules-Relation.png)
 
