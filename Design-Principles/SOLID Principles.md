@@ -9,28 +9,7 @@ Improving quality, design and maintainability with Design Principles
 **Code Rigidity** by Robert C. Martin
 > Rigidity is the tendency for software to be difficult to change, even in simple ways. Every change causes a cascade of subsequent changes in dependent modules
 
-## D.R.Y (Don’t repeat yourself) Principle
-Analysis of the written code and the desire to improve it are always key in software writing.
-
-When writing several classes with similar properties, we may encounter similar problems. This is a sign that the code inside these classes is common and it may indicate that it should be separated into another class that will deal with repetitive tasks in one place. Thanks to this operation, both classes will use the same code, and thus, the probability of error will drop.
-
-## KISS - Keep It Simple, Stupid!
-This rule is often mentioned when discussing architecture or details of building projects. Its essence is striving to maintain an elegant and transparent structure, without adding unnecessary elements.
-
-## SOC - Separation of Concern
-The separation of issues consists in the division of the program into separate modules that overlap with as little functionality as possible. We call this kind of program modular. Each element of the system should have its separate and singular application. The purpose of SoC (Separation of Concern) is to create a system in which each part plays a significant role while maintaining the possibility of maximum adaptation to changes. SoC does not refer only to the system architecture, but to various issues, eg to divide the application into layers (presentation, business logic, access to data, database).
-
-## CQS - Command Query Separation
-It is a rule that says that every method in the system should be classified into one of two groups:
-
-Command - these are methods that change the state of the application and do not return anything.
-Query - these are methods that return something, but do not change the state of the application.
-
-## Tell, don't ask Principle
-Used to eliminate type casting and checkong
-
-
-## SOLID Principles
+# SOLID Principles
 
 ## Single Responsibility Principal
 **Definition:**  There should not be more than one reason for a class to change, or  **a class should always handle single functionality**.
@@ -130,14 +109,41 @@ The principle Interface Segregation states that **a class should not be forced t
 * Interfaces should be split up in such a way that it can properly describe the separate functionalities of your system
 
 
-### Dependency Inversion Principle
+## Dependency Inversion Principle
 This principle states that high level modules should depend on high level generalizations, and not on low level details. Meaning that classes if will there dependencies they should depend on a interface or abstract class rathar than concreate classes. If clients are dependent on higher-level generalizations then low level implementations can be changed or replaced with more ease later on. This is a form of looser coupling.
 
-Also, dependency inversion helps in the generalization of the behavior of your concrete classes into abstract classes and interfaces
+Also, dependency inversion helps in the generalization of the behavior of your concrete classes into abstract classes and interfaces.
 
+What are High Level Modules?
+* Modules written to solve real problems and use cases
+* they are more abstract and **map to the business domain** -> business logic
+* These modules tell us "What the software should do"
+
+What are Low Level Modules?
+* Contain implementation details that are required to execute the business policies.
+* They are considered the "plumbing" of an application
+* These modules tell us "How the software should do various taks"
+
+![High Level Modules Work Together with Low Level Modules](resources/High-and-Low-Modules-Relation.png)
+
+High level and low level modules are always relative to one another. For example, It we take "payment" as the high level model the low level model for this component is "notification system"; and for "notification system" the low level module is "email service". These relationships always depend on what is the referential
+
+### Dependency Injection
+Dependency Injection is the technique that allows the creation of dependent objects outside of a class and provides those objects to a class
+
+### Inversion of Control (IoC)
+Inversion of control is a design principle in which the control of objects creation, configuration, and lifecycle is passed to a container or framework.
+
+IoC helps deal with a problem that can be seen by using the technique Dependency Injection. Creating dependencies manually in order to instanciate a component is not scalable. This is where the IoC comes in. It can handle the creation and the lifecycle of all objects in an application.
+
+It is no longer necessary create new objects with "new", they are created by "something else" (IoC container). 
+
+**Benefits**
+* makes easy to switch between different implementations at runtime
+* increased program modularity
+* Manages the lifecycle of objects and their configuration
 
 ## References
 http://www.blackwasp.co.uk/lsp.aspx
-
 https://stackoverflow.com/questions/56860/what-is-an-example-of-the-liskov-substitution-principle
 
