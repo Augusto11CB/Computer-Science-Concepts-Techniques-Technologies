@@ -126,7 +126,7 @@ What are Low Level Modules?
 * They are considered the "plumbing" of an application
 * These modules tell us "How the software should do various taks"
 
-![Low-ISP-Adherence](resources/Low-ISP-Adherence .png)
+![Low-ISP-Adherence](resources/Low-ISP-Adherence.png)
 
 ![High Level Modules Work Together with Low Level Modules](resources/High-and-Low-Modules-Relation.png)
 
