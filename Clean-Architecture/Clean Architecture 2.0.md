@@ -77,7 +77,7 @@ By using Clean Architecture the components such as usecases, domain business log
 
 Due to the separation provided by using clean architecture, it is straightforward to test the business logic of the application without having to setup any framework or library.  It can write simple unit tests to test the complex business logic in our application without having to deal with the frameworks. Also, there is no need to have to change these tests when we change something in a framework. Of course, integration tests still important to ensure that everything is wired up correctly, but these costly tests will only be a few and will not increase when the complexity in our business logic is increased.
 
-![acceptance-tests](acceptance-tests.png)
+![acceptance-tests](resources/acceptance-tests.png)
 
 ### Smoke Test
 A smoke test may address basic questions like "does the program run?", "does the user interface open?", or "does clicking the main button do anything?" The process of smoke testing aims to determine whether the application is so badly broken as to make further immediate testing unnecessary. 
