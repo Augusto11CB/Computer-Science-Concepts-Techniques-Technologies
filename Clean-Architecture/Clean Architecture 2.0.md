@@ -1,4 +1,4 @@
-## Clean Architecture
+## Clean Architecture 2.0
 
 Clean Architecture is a philosophy of architectural essentialism. It is about focusing on what is truly essential to the software' architecture versus what is just an implementation detail. 
 
