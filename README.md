@@ -10,7 +10,7 @@ This repository aims to store my general studies on concepts, new technologies a
  
 * [Data Structure](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Data-Structures)
 * [Aspect Oriented Programming](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Aspected-Oriented-Programming)
-* Clean Architeture
+* [Clean Architeture](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Clean-Architecture)
   * [Clean Architecture - Spring + Kotlin](https://github.com/AugustoCalado/Clean-Architecture-Spring-Kotlin-POC)
 * Design Principles
   * [SOLID - Design Principles](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/SOLID)
