@@ -4,7 +4,7 @@ Clean Architecture is a philosophy of architectural essentialism. It is about fo
 
 ## The Tradicional Architecture - Three-Layer Architecture
 In this Architecture the key feature is that the user interface, business logic, and data access layer revolve around the database.
-![classic-three-layer-database-centric-architecture](resource/classic-three-layer-database-centric-architecture.png)
+![classic-three-layer-database-centric-architecture](resources/classic-three-layer-database-centric-architecture.png)
 
 ## Domain-Centric Architecture
 In this architecture the domain is essential rather than the database.  
