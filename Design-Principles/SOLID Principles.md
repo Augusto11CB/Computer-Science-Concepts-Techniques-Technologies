@@ -42,12 +42,12 @@ This concept  is critical when developing libraries and frameworks because the c
 
 ### Liskov Substitution Requirements
 * **A subclass shouldn’t strengthen pre-conditions**
-A subclass shouldn’t strengthen pre-conditions. That is, a subclass shouldn’t strengthen pre-conditions.  
+A subclass shouldn’t strengthen pre-conditions. A precondition of a class is a rule that must be in place before an action can be taken.
 **Example:**  Before calling a method that reads from a database you may need to satisfy the precondition that the database connection is open. If the subclass add more conditions, there is a viollation of the principle
 
-* **A subclass shouldn’t strengthen pre-conditions**
-A subclass shouldn’t strengthen pre-conditions. This means that the subclass should cause the state of the program to be in the same state as the base class after a method call.
-**Example:**  After calling a method that reads from a database it may be assumed that the database connection is closed after executing a SQL statement. If the subclass remove the condition of close the database conection, there is a viollation of the principle.
+* **Postconditions cannot be weakened in subclasses.s**
+Postconditions describe the state of objects after a process is completed. 
+**Example:**  After calling a method that reads from a database it may be assumed that the database connection is closed after executing a SQL statement. If the subclass remove the condition of close the database conection by assuming that it will be closed by something else, there is a viollation of the principle.
 
 * **Invariants of a superclass must be preserved**
 Invariant conditions that exist in the base class, must also remain invariant in the subclass. Since invariant conditions are expected to be immutable, the subclass should not change them as it may cause a side effect in the behaviours of the base class or the program. Invariants can be described as:
@@ -83,6 +83,7 @@ for (Taks t: tasks){
     t.setInProgress();
 }
 ```
+
 This kind of approach where for most subtypes, one thing is done, but for particular subtypes something else must be performed. It indicates that the subtypes cannot be fully replace by its base class. In this situation inheritance are not been used properly 
 
 **Solution:** Apply the principle "tell, don't ask"
@@ -95,6 +96,7 @@ Class BugFix Extends Taks {
 	    super;setInProgress();
 
 } 
+
 // new for loop
 for (Taks t: tasks){
     t.setInProgress();
@@ -111,6 +113,10 @@ The principle Interface Segregation states that **a class should not be forced t
 
 ## Dependency Inversion Principle
 This principle states that high level modules should depend on high level generalizations, and not on low level details. Meaning that classes if will there dependencies they should depend on a interface or abstract class rathar than concreate classes. If clients are dependent on higher-level generalizations then low level implementations can be changed or replaced with more ease later on. This is a form of looser coupling.
+
+**Summary**
+A. Higher-level modules should not depend on low-level modules. Both should depend on abstractions.
+B. Abstractions should not depend on details. Details should depend on abstractions.
 
 Also, dependency inversion helps in the generalization of the behavior of your concrete classes into abstract classes and interfaces.
 
@@ -133,14 +139,14 @@ What are Low Level Modules?
 High level and low level modules are always relative to one another. For example, It we take "payment" as the high level model the low level model for this component is "notification system"; and for "notification system" the low level module is "email service". These relationships always depend on what is the referential
 
 ### Dependency Injection
-Dependency Injection is the technique that allows the creation of dependent objects outside of a class and provides those objects to a class
+Dependency Injection is the **technique** that allows the creation of dependent objects outside of a class and provides those objects to a class
 
 ### Inversion of Control (IoC)
-Inversion of control is a design principle in which the control of objects creation, configuration, and lifecycle is passed to a container or framework.
+**Inversion of control is a design principle in which the control of objects creation, configuration, and lifecycle is passed to a container or framework.**
 
 IoC helps deal with a problem that can be seen by using the technique Dependency Injection. Creating dependencies manually in order to instanciate a component is not scalable. This is where the IoC comes in. It can handle the creation and the lifecycle of all objects in an application.
 
-It is no longer necessary create new objects with "new", they are created by "something else" (IoC container). 
+**It is no longer necessary create new objects with "new", they are created by "something else" (IoC container).** -> Heavy use of frameworks to perform these actions
 
 **Benefits**
 * makes easy to switch between different implementations at runtime
