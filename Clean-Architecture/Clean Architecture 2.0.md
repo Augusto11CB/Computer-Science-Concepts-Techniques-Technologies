@@ -58,7 +58,11 @@ categorical cohesion
 **What makes more sense?**
 Store silverware forks next to pitch forks and tuning fork just because they'are all three forks of some kind **OR** Store forks next to knives and spoons because all of them are used together when eat - Example By Matthew Renze
 
-![enter image description here](resources/system-organization-based-components-vs-use-cases.png)
+![enter image description here](resources/system-organization-based-components-vs-use-cases-folder-structure.png)
+
+**Ilustrative Image** 
+![enter image description here](resources/system-organization-based-components-vs-use-cases-metaphor.png)
+system-organization-based-components-vs-use-cases-metaphor.png
 
 ## Microservices - Overview
 
