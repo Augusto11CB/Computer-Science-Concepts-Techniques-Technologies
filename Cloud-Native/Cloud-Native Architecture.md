@@ -12,12 +12,15 @@
 ## Microservices Architecture
 ![micro-arch](resources/micro-arch.png)
 
+### The Supporting Infrastructure For Microservices
+![infrastructure-for-microservices](resources/infrastructure-for-microservices.png)
+
 ## Cloud-native Application Architeture
 
 ## Cloud-native Application delivery
 
 ## Cloud-native Application Infrastructure
-![infrastructure-for-microservices](resources/infrastructure-for-microservices.png)
+
 
 ## PaaS
 Example: Heroku
