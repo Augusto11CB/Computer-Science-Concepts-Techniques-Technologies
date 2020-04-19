@@ -22,9 +22,9 @@ Treat backing services as attached resources. A backing service is one that requ
 5. **Separate build and run stages**
 Strictly separate build and run stages. Build, release, and run stages should be treated as completely distinct from one another
 A codebase is transformed into a deploy through three stages
-- **build stage:** code repo is converted into an executable bundle known as a build. the build stage fetches vendors dependencies and compiles binaries and assets.
-- **release stage:** e takes the build produced and combines it with the deploy's current config. The result is a release ready for immediate execution in the execution environment.
-- **run stage:** runs the app in the execution environment
+	- **build stage:** code repo is converted into an executable bundle known as a build. the build stage fetches vendors dependencies and compiles binaries and assets.
+	- **release stage:** e takes the build produced and combines it with the deploy's current config. The result is a release ready for immediate execution in the execution environment.
+	- **run stage:** runs the app in the execution environment
 
 6. **App executed as stateless processes**
 The app is executed in the execution environment as one or more processes. The state of your system is completely defined by your databases and shared storage, and not by each individual running application instance.
