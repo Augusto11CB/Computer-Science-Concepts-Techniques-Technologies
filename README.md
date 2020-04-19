@@ -30,6 +30,7 @@ This repository aims to store my general studies on concepts, new technologies a
 
 * [API Design](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/API)
   * API First
+  * Fluent interface
 
 * [Security](https://github.com/AugustoCalado/Security-Studies) 
   * [Mutual TLS (MTLS) - Spring + Kotlin](https://github.com/AugustoCalado/MTLS-MutualTLS-Spring-Kotlin)
