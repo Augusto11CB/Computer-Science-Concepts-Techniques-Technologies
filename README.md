@@ -18,6 +18,9 @@ This repository aims to store my general studies on concepts, new technologies a
   * Least Knowledge Principle
     * Law of Demeter
 * [Design Patterns](https://github.com/AugustoCalado/Design-Patterns)
+* Cloud Native Applications
+  * [Cloud-Native Architecture](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Cloud-Native/Cloud-Native%20Architecture.md)
+  * [12 Factor App](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Cloud-Native/12-Factor%20Applications.md)
 * [API Design](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/API)
   * API First
 * [12 Factor App](https://will.koffel.org/post/2014/12-factor-apps-in-plain-english/)
@@ -25,7 +28,7 @@ This repository aims to store my general studies on concepts, new technologies a
   * [Mutual TLS (MTLS) - Spring + Kotlin](https://github.com/AugustoCalado/MTLS-MutualTLS-Spring-Kotlin)
 * [Queues](https://github.com/AugustoCalado/Queues-Studies)
 * Microservices
-* Cloud Native Applications
+
 * Event Driven Development - EDD
 * Behavior Driven Development - BDD
 * Domain Driven Development - DDD
