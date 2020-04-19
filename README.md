@@ -18,14 +18,15 @@ This repository aims to store my general studies on concepts, new technologies a
 * [Design Principles](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Design-Principles)
   * [SOLID - Design Principles](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/SOLID)
   * [Composing Objects Principle](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Design-Principles/Composing%20Objects%20Principle.md)
-  * [Least Knowledge Principle](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Design-Principles/Least%20Knowledge%20Principle.md)
-    * Law of Demeter
+  * [Least Knowledge Principle - Law of Demeter](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Design-Principles/Least%20Knowledge%20Principle.md)
 
 * [Design Patterns](https://github.com/AugustoCalado/Design-Patterns)
 
-* Cloud Native Applications
+* [Cloud Native](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/Cloud-Native)
   * [Cloud-Native Architecture](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Cloud-Native/Cloud-Native%20Architecture.md)
   * [12 Factor App](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/blob/master/Cloud-Native/12-Factor%20Applications.md)
+
+* [Test Driven Development - TDD](https://github.com/AugustoCalado/Test-Driven-Development-Studies)
 
 * [API Design](https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/API)
   * API First
@@ -42,8 +43,6 @@ This repository aims to store my general studies on concepts, new technologies a
 * Behavior Driven Development - BDD
 
 * Domain Driven Development - DDD
-
-* [Test Driven Development - TDD](https://github.com/AugustoCalado/Test-Driven-Development-Studies)
 
 * Backends For Frontends - BFF
 
