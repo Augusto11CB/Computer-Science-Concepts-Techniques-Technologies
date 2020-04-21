@@ -32,7 +32,8 @@ The app is executed in the execution environment as one or more processes. The s
 7. **Port binding**
 This factor is an extension of factor IV. The application is ''self-contained" any services are exposed via ports like http. 
 
-	> The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port.The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port. By [12factor.net](https://12factor.net/port-binding ).
+	> The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port.The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port. 
+	\- [12factor.net](https://12factor.net/port-binding ).
 
 9. **Scale out processes**
 When the code is executed, lots of small processes are handling specific needs (handlers for process requests, handlers for API calls and handlers for background processing). By keeping these processes working independently and running them as separate processes, the application can scale better.
