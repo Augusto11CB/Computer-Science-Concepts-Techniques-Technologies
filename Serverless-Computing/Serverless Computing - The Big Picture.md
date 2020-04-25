@@ -2,7 +2,7 @@
 # Serveless Computing - The Big Picture
 
 ## Definitions
- > Refering to a cloud-computing execution model in which the cloud provider runs the server, and dynamically manages the allocation of machone resources.
+ > Refering to a cloud-computing execution model in which the cloud provider runs the server, and dynamically manages the allocation of machine resources.
 > \- Wikipedia.org
 
 > A serverless solution is one that costs you nothing to run if nobody is using it
@@ -15,7 +15,7 @@
 ![enter image description here](resources/what-to-do-with-lambda.png)
 
 ## What You _DO NOT_ Do in Serverless Systems
-
+![enter image description here](resources/what-YOU-do-NOT-DO-with-lambda.png)
 
 ## Serverless Paradigms
 
@@ -25,6 +25,7 @@
 * When something does happen, you have fine-grained billing visibility
 
 ## Serverless Vs Serverful
+![enter image description here](resources/serverless-vs-serverful.png)
 
 ## Challenges 
 ### FaaS Needs Managed Services
@@ -68,6 +69,8 @@ The consumer has full control over the VM and has to maintain Patching, Software
 
 **Examples:** Amazon EC2, Windows Azure, Rackspace, Google Compute Engine.
 
+![SaaS-IaaS-PaaS](resources/SaaS-IaaS-PaaS.png)
+
 ### CaaS - Container as a Service
 Computing that lets users deploy and manage applications through container-based abstraction. The provider offers the framework, or the orchestration platform, on which the containers are deployed and managed, and it’s through this orchestration that key IT functions are automated. 
 
@@ -88,6 +91,8 @@ By being an event-driven computing model, it’s there when you need it but it d
 FaaS is a way to implement serverless computing where developers write business logic that is then executed in Linux containers fully managed by a platform.
 
 **Example:** AWS Lambda or Google Cloud Functions
+
+![SaaS-vs-IaaS-vs-PaaS-RH](resources/SaaS-vs-IaaS-vs-PaaS-RH.png)
 
 ## Serverless Best Practices
 - Create Single purpose functions
