@@ -126,6 +126,27 @@ FaaS is a way to implement serverless computing where developers write business 
 	- Augment log messages with correlation tokens as needed 
 - Continue Using CI/CD Processes 
  
+## Type of Architectures - Serverless Applications
+### API-Cloud-Database Architecture
+ ![API-Cloud-Database.png](resources/API-Cloud-Database.png)
+
+### Scheduled Job Architecture
+![scheduled-job-arch.png](resources/scheduled-job-arch.png)
+
+### Web App Arch
+![resources/web-app-arch.png](resources/web-app-arch.png)
+
+### Batch Processing Architecture
+![batch-processing-arch.png](resources/batch-processing-arch.png)
+
+### Data-Streaming Architecture
+![resources/data-streaming-arch.png](resources/data-streaming-arch.png)
+
+### Legacy System Strangle Architecture.png
+![resources/legacy-system-strangle-arch.png](resources/legacy-system-strangle-arch.png)
+
+### Throttled Access to Downstream System Architecture
+![resources/throttled-access-to-downstream-system-arch.png](resources/throttled-access-to-downstream-system-arch.png)
 
 ## References
 [Microsoft - what is paas ?](https://azure.microsoft.com/en-us/overview/what-is-paas/)
