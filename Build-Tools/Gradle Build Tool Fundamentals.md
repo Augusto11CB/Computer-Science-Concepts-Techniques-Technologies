@@ -57,6 +57,7 @@ Differently from the "well-known" plugins, the community plugins do not have the
 
 **Flyway - Example**
 ```kotlin
+// Kotlin
 plugins {
 	java
 	id("org.flywaydb.flyway") version "6.3.2"
@@ -64,12 +65,189 @@ plugins {
 ```
 
 ```
+//Grovvy
 plugins {
 	id 'java'
 	id "org.flywaydb.flyway" version "6.3.2"
 }
 ```
+### The Plugin `application`
+The plugin application, when included to the project,  provides a new task called `run` that treats java code as it was an application and run any `main` method defined inside the project.
 
+```
+plugins {
+	id 'application'
+}
+
+mainClassName = 'com.fully.qualified.main.class' // it is a property embebed in the plugin *application* 
+```
+
+**Input:** `gradle run`
+
+**Output:** 
+```
+> Task :run
+Hello,I'm an application!
+```
+
+#### Configuring the `application` plugin
+**How to Target Specific Version of Java **
+```
+java {
+	sourceCompatibility = JavaVersion.Version_1_8
+	targetCompatibility = JavaVersion.Version_1_8
+}
+
+//you write a code in a `source` version and compile your classes to the `target` VM //version. In order to run it e.g. on other workstation with older java version.
+```
+**sourceCompatibility** = specifies that version of the Java programming language be used to compile .java files. e.g sourceCompatibility 1.6 =specifies that version 1.6 of the Java programming language be used to compile .java files.
+
+By default sourceCompatibility = "version of the current JVM in use" and targetCompatibility = sourceCompatibility
+
+**targetCompatibility** = The option ensures that the generated class files will be compatible with VMs specified by targetCompatibility .
+
+
+## Source Sets
+By default Gradle make use of a specific file configuration setup to find the files that will be build. These locations are `src/main/java ` and `src/main/resources`.
+
+In order to specify a new file location a special Gradle configuration can be done using the block **sourceSets**. Within the **sourceSets** block, two other blocks can be set, the first is the **main** block which will contain the location of the ..... . The second block is **test** where the tests file location will be defined.
+
+### sourceSets - Kotlin Version
+```kotlin
+// Kotlin V1
+sourceSets {  
+  main {
+	java {
+	  setSrcDirs(listOf("src/main/kotlin"))
+	}	
+  }
+  test {
+	java {
+	  setSrcDirs(listOf("src/test/kotlin"))
+	}
+  } 
+}
+```
+
+```kotlin 
+// Kotlin V2
+sourceSets {  
+  main {  
+	  java.srcDir("src/main/kotlin")  
+  }  
+  test {  
+	  java.srcDir("src/test/kotlin")  
+  }  
+}
+```
+
+### sourceSets -  Grovvy Version
+```
+// Grovvy 
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+    test {
+        java {
+            srcDir 'test/src'
+        }
+    }
+}
+```
+
+## Kotlin - build.gradle
+### Kotlin Version
+```kotlin
+plugins {
+    application
+    kotlin("jvm") version "1.3.71" /*apply false*/
+}
+
+
+kotlin {
+    sourceSets["main"].apply {
+        kotlin.srcDir("src/main/kotlin")
+    }
+    sourceSets["test"].apply {
+        kotlin.srcDir("src/main/kotlin")
+    }
+}
+
+application {
+    mainClassName = "fully.qualified.name"
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8") // implementation(kotlin("stdlib-jdk8"))
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+
+}
+
+tasks {
+
+    compileKotlin {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "1.8"
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "1.8"
+        }
+    }
+}
+```
+
+### Grovvy Version
+```
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "1.3.71"
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+
+    sourceSets {
+        main.kotlin.srcDirs += 'src'
+        test.kotlin.srcDirs += 'test/src'
+    }
+
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+tasks {
+
+    compileKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    compileKotlinTestKotlin {
+        kotlinOptions.jvmTarget = "1.8
+    }
+
+}
+```
 
 ## Gradle Tasks
 
