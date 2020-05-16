@@ -249,6 +249,66 @@ tasks {
 }
 ```
 
+## Gradle Dependency Management
+### Get Dependencies from FileSystem
+```
+repositories {
+
+    flatDir {
+        dirs 'lib'
+    }
+
+}
+
+dependencies {
+    implementation 'log4j:log4j:1.2.2'
+}
+```
+
+### Configuration Scope
+Given a dependency  it exists within a given scope.
+
+- **implementation scope**
+	-	compileOnly
+	-	runtimeOnly
+- **testImplementation scope**	
+ 	-	testCompileOnly
+	-	testRuntimeOnly
+
+### The gradle.properties file - Externalising Version Info 
+**gradle.properties**
+```
+log4j_version = 1.2.8
+```
+
+**build.gradle.kts - Kotlin version**
+```kotlin
+val log4j_version: String by project // delegating to 'project' 
+										//the attribuation of the value for this variable
+
+dependencies {
+    implementation("log4j:log4j:$log4j_version")
+}
+
+```
+
+**build.gradle - Grovvy version**
+use `buildscript` block  with extended(`ext`) properties 
+```
+buildscript {
+	ext {
+		log4j_version = '1.2.8'
+	}
+}
+
+dependencies {
+    implementation"log4j:log4j:$log4j_version" 
+    // in grovvy we can only access ext variables using (") 
+    
+    implementation 'junit:junit:3.8.1'
+}
+```
+
 ## Gradle Tasks
 
 ``
