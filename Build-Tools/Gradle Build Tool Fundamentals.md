@@ -16,6 +16,26 @@
 3. Execution
 	Gradle determines which tasks is going to be executed. This is based on the argument that is passed on the gradle command line 
 
+## Build script blocks
+### allprojects { }
+
+### artifacts { }
+### buildscript { }
+-   The global level  `dependencies`  and  `repositories`  sections list dependencies that required for building your source and running your source etc.
+-   The  `buildscript`  is for the  `build.gradle`  file itself. So, this would contain dependencies for `Dockerfile`, and any other dependencies **for running the tasks in all the dependent  `build.gradle`**
+
+**Difference Between Dependencies Within Buildscript Closure and Core**
+The repositories in the buildScript block are used to fetch the dependencies of your buildScript dependencies. These are the dependencies that are put on the classpath of your build and that you can refer to from your build file. For instance extra plugins that exist on the internet.
+
+The repositories on the root level are used to fetch the dependencies that your project depends on. So all the dependencies you need to compile your project.
+
+### configurations { }
+### dependencies { }
+### repositories { }
+### sourceSets { }
+### subprojects { }
+### publishing { }
+
 ## Dependecy 
 
 ### Dependecy between Tasks
@@ -57,7 +77,7 @@ Gradle make use of hash in order to determine if a file need to be re-downloaded
 ### Deleting Cache 
 It is possible to delete the folder **cache** inside the folder .gradle 
 
-## Plugins - Extend project's capabilities
+## Plugins Blog - Extend project's capabilities
 
 ### Basic Syntax   
 `plugins { java } //kts`
@@ -119,7 +139,7 @@ By default sourceCompatibility = "version of the current JVM in use" and targetC
 **targetCompatibility** = The option ensures that the generated class files will be compatible with VMs specified by targetCompatibility .
 
 
-## Source Sets
+## Source Sets Block
 By default Gradle make use of a specific file configuration setup to find the files that will be build. These locations are `src/main/java ` and `src/main/resources`.
 
 In order to specify a new file location a special Gradle configuration can be done using the block **sourceSets**. Within the **sourceSets** block, two other blocks can be set, the first is the **main** block which will contain the location of the ..... . The second block is **test** where the tests file location will be defined.
@@ -261,7 +281,7 @@ tasks {
 }
 ```
 
-## Gradle Dependency Management
+## Gradle Dependency Management - Repository and Dependencies Block
 ### Get Dependencies from FileSystem
 ```
 repositories {
@@ -320,6 +340,17 @@ dependencies {
     implementation 'junit:junit:3.8.1'
 }
 ```
+
+## Multi-Project Build
+### File and Project of a Gradle multi-project 
+-- build.gradle #root build.gradle
+-- settings.gradle
+--- **WebService**
+----- src
+----- build.gradle
+--- **CommonRepository**
+----- src
+----- build.gradle
 
 ## Gradle Tasks
 
