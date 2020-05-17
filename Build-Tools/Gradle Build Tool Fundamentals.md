@@ -378,7 +378,15 @@ dependencies {
 ----- build.gradle
 
 ### Example Root build.gradle
-**Kotlin - Version**
+**Kotlin Version**
+**gradle.properties**
+```
+flyway_version= 1.2.8
+junit_version= 1.2.8
+mockito_version= 1.2.8
+h2_version= 1.2.8
+```
+**build.gradle**
 ```kotlin
 val flyway_version: String by project
 val junit_version: String by project
@@ -443,6 +451,67 @@ project(":WebService") {
 listOf("WebService","CommonRepository").foreach {name ->
     project(":$name") {
         //doSomething
+    }
+
+}
+```
+
+**Grovvy Version**
+```
+buildscript {
+    ext {
+        flyway_version = '1.1'
+    }
+    
+    repositories {
+        jcenter()
+    }
+
+        dependencies {
+        classpath("com.h2database:h2:1.1) 
+                                                  
+    }  
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "1.3.71"
+    id "org.flywaydb.flyway" version "${flyway_version}" apply false
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+subproject {
+
+    apply plugin: 'java'
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    }
+
+}
+
+project(':CommonRepository') {
+    dependencies {
+
+    }
+}
+
+project(':WebService') {
+    dependencies {
+        implementation project(':CommonRepository')
+    }
+}
+
+["WebService","CommonRepository"].each { name ->
+
+    project(":$name") {
+        
     }
 
 }
