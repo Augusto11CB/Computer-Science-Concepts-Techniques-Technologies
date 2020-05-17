@@ -18,9 +18,20 @@
 
 ## Build script blocks
 ### allprojects { }
+In a multi-project gradle build, there is a **rootProject** and the **subprojects**. The combination of both is **allprojects**. The **rootProject** is where the build is starting from. A common pattern is a **rootProject** has no code and the **subprojects** are java projects. In which case, you apply the java plugin to only the **subprojects**:
+
+```
+subprojects {
+    apply plugin: 'java'
+} 
+```
+
+If some of the sub-projects needs to be further customized then the right place for these customization would be in the build.gradle file located in the sub-project folder.
 
 ### artifacts { }
+
 ### buildscript { }
+This block is used to configure the execution of the script. So any dependency added in the buildscript block is used by the **script** and not, for example, java build processes.
 -   The global level  `dependencies`  and  `repositories`  sections list dependencies that required for building your source and running your source etc.
 -   The  `buildscript`  is for the  `build.gradle`  file itself. So, this would contain dependencies for `Dockerfile`, and any other dependencies **for running the tasks in all the dependent  `build.gradle`**
 
@@ -35,6 +46,20 @@ The repositories on the root level are used to fetch the dependencies that your 
 ### sourceSets { }
 ### subprojects { }
 ### publishing { }
+### plugins {}
+With the new  `plugins block`  method, you can add a plugin and control when to apply it using an optional parameter  `apply`:
+
+```
+plugins {
+    id «plugin id» version «plugin version» [apply «false»]
+    id 'my.special.plugin' version '1.0' apply false
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'my.special.plugin'
+}
+```
 
 ## Dependecy 
 
@@ -351,6 +376,77 @@ dependencies {
 --- **CommonRepository**
 ----- src
 ----- build.gradle
+
+### Example Root build.gradle
+**Kotlin - Version**
+```kotlin
+val flyway_version: String by project
+val junit_version: String by project
+val mockito_version: String by project
+val h2_version: String by project
+
+buildscript {
+    val val h2_version: String by project
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("com.h2database:h2:$h2_version) // Here the h2_version used is the one
+                                                    // defined within de buildscript block
+    }                                                   // the external h2_version, cannot be accessed from this scope
+
+}
+
+plugins {
+    id ("org.flywaydb.flyway") version "6.3.1"
+    id ("org.springframework.boot") version "2.2.5.RELEASE" apply false
+    id ("io.spring.dependency-management") version "1.0.9.RELEASE" apply false
+    java
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+subprojects {
+    apply(plugin = "java")
+
+    version = "0.1"
+
+    repositories {
+        jcenter
+    }
+
+    dependencies {
+
+        //Several Dependencies
+            //Several Dependencies            
+    }
+}
+
+project(":CommonRepository") {
+
+    dependencies {
+        //Declaration of specific dependencies in the project "CommonRepository"
+    }
+}
+
+project(":WebService") {
+
+    dependencies {
+        "implementation"(project(":CommonRepository"))
+    }
+}
+
+// Applying a specific task/config/dependency for more than one project, but not for all of them
+listOf("WebService","CommonRepository").foreach {name ->
+    project(":$name") {
+        //doSomething
+    }
+
+}
+```
 
 ## Gradle Tasks
 
