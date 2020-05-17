@@ -45,6 +45,18 @@ Hello,
 world
 ```
 
+## Gradle Cache
+Gradle to save time on the download cache its files. So any library, or modules needed are cached on the file system. Also, meta data and files are stored separately on the file system. Repositories on its turn also cache their dependencies in an independent way.
+
+### When Gradle Store Something in the Cache
+Gradle make use of hash in order to determine if a file need to be re-downloaded. It compares the versions in the cache and remote repository during the decision to download or not.
+
+### How to Refresh Dependencies 
+`--refresh-dependencies flag`
+
+### Deleting Cache 
+It is possible to delete the folder **cache** inside the folder .gradle 
+
 ## Plugins - Extend project's capabilities
 
 ### Basic Syntax   
