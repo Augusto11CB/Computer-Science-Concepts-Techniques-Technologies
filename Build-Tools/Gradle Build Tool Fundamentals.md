@@ -527,4 +527,5 @@ project(':WebService') {
 - i - show us some log
 
 ## Gradle Wrapper - gradlew
+./gradlew build --refresh-dependencies 
  
