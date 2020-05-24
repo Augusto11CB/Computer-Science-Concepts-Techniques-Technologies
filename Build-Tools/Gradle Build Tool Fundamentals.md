@@ -20,7 +20,7 @@
 ### allprojects { }
 In a multi-project gradle build, there is a **rootProject** and the **subprojects**. The combination of both is **allprojects**. The **rootProject** is where the build is starting from. A common pattern is a **rootProject** has no code and the **subprojects** are java projects. In which case, you apply the java plugin to only the **subprojects**:
 
-```
+```groovy
 subprojects {
     apply plugin: 'java'
 } 
@@ -49,7 +49,7 @@ The repositories on the root level are used to fetch the dependencies that your 
 ### plugins {}
 With the new  `plugins block`  method, you can add a plugin and control when to apply it using an optional parameter  `apply`:
 
-```
+```groovy
 plugins {
     id «plugin id» version «plugin version» [apply «false»]
     id 'my.special.plugin' version '1.0' apply false
@@ -121,7 +121,7 @@ plugins {
 }
 ```
 
-```
+```groovy
 //Grovvy
 plugins {
 	id 'java'
@@ -163,6 +163,28 @@ By default sourceCompatibility = "version of the current JVM in use" and targetC
 
 **targetCompatibility** = The option ensures that the generated class files will be compatible with VMs specified by targetCompatibility .
 
+### The Plugin `java-library`
+The **Java Library** plugin expands the capabilities of the **Java** plugin by providing specific knowledge about Java libraries. In particular, a **Java library** exposes an API to consumers (i.e., other projects using the Java or the Java Library plugin).
+
+```groovy
+plugins {
+    id 'java-library'
+}
+```
+
+#### Configuration `api()` vs `implementation`
+The plugin exposes two configurations: `api` and  `implementation`. The `api` configuration should be used to declare dependencies which are exported by the library API, whereas the `implementation` configuration should be used to declare dependencies which are internal to the component.
+
+```groovy
+dependencies {
+    api 'org.apache.httpcomponents:httpclient:4.5.7'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+}
+```
+
+Dependencies appearing in the api configurations will be transitively exposed to consumers of the library, and as such will appear on the compile classpath of consumers. 
+
+> Reference: [Gradle Docs](https://docs.gradle.org/current/userguide/java_library_plugin.html)
 
 ## Source Sets Block
 By default Gradle make use of a specific file configuration setup to find the files that will be build. These locations are `src/main/java ` and `src/main/resources`.
@@ -199,7 +221,7 @@ sourceSets {
 ```
 
 ### sourceSets -  Grovvy Version
-```
+```groovy
 // Grovvy 
 sourceSets {
     main {
@@ -270,7 +292,7 @@ tasks {
 ```
 
 ### Grovvy Version
-```
+```groovy
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "1.3.71"
     id 'application'
@@ -308,7 +330,7 @@ tasks {
 
 ## Gradle Dependency Management - Repository and Dependencies Block
 ### Get Dependencies from FileSystem
-```
+```groovy
 repositories {
 
     flatDir {
@@ -351,7 +373,7 @@ dependencies {
 
 **build.gradle - Grovvy version**
 use `buildscript` block  with extended(`ext`) properties 
-```
+```groovy
 buildscript {
 	ext {
 		log4j_version = '1.2.8'
@@ -457,7 +479,7 @@ listOf("WebService","CommonRepository").foreach {name ->
 ```
 
 **Grovvy Version**
-```
+```groovy
 buildscript {
     ext {
         flyway_version = '1.1'
@@ -517,6 +539,136 @@ project(':WebService') {
 }
 ```
 
+## Using Gradle to Manage Testing
+### Visualizing Test Execution State (Failed, Skiped, Passed)
+In order to visualize the state of execution of each test, it is possible to add a `test` block in the build.gradle file. 
+
+```kotlin
+import org.gradle.api.tasks.logging.TestExceptionFormat
+import org.gradle.api.tasks.logging.TestLogEvent
+
+dependencies{
+	//....
+}
+
+tasks {
+	test {
+		testLogging.events = setOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
+	}
+
+}
+```
+
+```groovy 
+//Groovy
+import org.gradle.api.tasks.logging.TestExceptionFormat
+import org.gradle.api.tasks.logging.TestLogEvent
+
+dependencies{
+	testImplementation 'junit:junit:4.12'
+}
+
+test {
+	testLogging {
+		events TestLogEvent.FAILED,
+    			TestLogEvent.PASSED,
+	     		TestLogEvent.SKIPPED.
+	}
+}
+```
+
+### Improving Test's Logs Using `adashr.test-logger`
+
+```groovy
+plugins {
+	id 'com.adashr.test-logger' version '2.8.0'
+}
+
+testlogger {
+    theme 'standard'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 2000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+    logLevel 'lifecycle'
+}
+
+``` 
+ 
+[Docs](https://github.com/radarsh/gradle-test-logger-plugin)
+
+### Using Junit5 with Gradle
+```kotlin 
+dependencies {
+	...
+}
+
+tasks {
+	test{
+		useJunitPlatform()
+	}
+}
+```
+
+```groovy 
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1
+}
+
+test{
+	useJunitPlatform()
+}
+```
+
+### Filtering Tests
+**Executing a Single Test**
+```kotlin
+// Kotlin
+tasks.register<Test>("singleTest") {
+	group = "Verification"
+	description = "Run single test"
+	dependsOn("testClasses")
+	useJunitPlatform()
+	testLogging.events = setOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
+	filter {
+		includeTestsMaching("com.package.ClassName.testMethodName")
+	}
+}
+```
+
+```groovy
+// Groovy
+task singleTest(type: Test) {
+	group = "Verification"
+	description = "Run single test"
+	dependsOn testClasses
+
+	useJunitPlatform()
+	testLogging {
+		events TestLogEvent.FAILED,
+    			TestLogEvent.PASSED,
+	     		TestLogEvent.SKIPPED.
+	}
+	filter {
+		includeTestsMaching 'com.package.ClassName.testMethodName'
+	}
+}
+```
+
+`$ gradle clean singleTest`
+
+
 ## Gradle Tasks
 
 ``
@@ -527,5 +679,4 @@ project(':WebService') {
 - i - show us some log
 
 ## Gradle Wrapper - gradlew
-./gradlew build --refresh-dependencies 
  
