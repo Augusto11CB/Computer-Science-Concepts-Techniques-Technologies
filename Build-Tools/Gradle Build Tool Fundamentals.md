@@ -679,4 +679,23 @@ task singleTest(type: Test) {
 - i - show us some log
 
 ## Gradle Wrapper - gradlew
+The Wrapper is a script that invokes a declared version of Gradle, downloading it beforehand if necessary. As a result, developers can get up and running with a Gradle project quickly without having to follow manual installation processes
+
+-   Standardizes a project on a given Gradle version, leading to more reliable and robust builds.
+    
+-   Provisioning a new Gradle version to different users and execution environment (e.g. IDEs or Continuous Integration servers) is as simple as changing the Wrapper definition.
+Wrapper files:
+
+```
+.
+├── build.gradle
+├── settings.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+└── gradlew.bat
+
+```
  
