@@ -11,6 +11,10 @@
 
 
 ## Microservices Architecture
+**Definition:** An architectural pattern of building small domain bounded and independently deployable services that communicate over a lightweight API
+
+A common practice is to have microservices communicating via JSON over RESTful APIs
+
 ![micro-arch](resources/micro-arch.png)
 
 ### The Supporting Infrastructure For Microservices
