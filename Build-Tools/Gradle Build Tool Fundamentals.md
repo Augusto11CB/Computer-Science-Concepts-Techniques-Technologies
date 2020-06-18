@@ -1,12 +1,23 @@
 
 # Gradle Build Tool Fundamentals
 
+Gradle has two basic concepts: projects and tasks. These concepts are explained in the following:
+
+-   A  **project**  is either something we build (e.g. a jar file) or do (deploy our application to production environment).  **A project consists of one or more tasks**.
+-   A  **task**  is an atomic unit work which is performed our build (e.g. compiling our project or running tests).
+
+
 ## What is in a Project?
 - 'build' file - build files defines the tasks, either pre-defined (gradlew wrapper or the task _Tasks_), or directly, or indirectly thorough plugins (e.g. _java_ plugin) 
 	 - build.gradle
 	 - build.gradle.kts
-
 - settings file
+
+A gradle build can be configured by using the following configuration files:
+ - The Gradle build script (build.gradle) specifies a project and its tasks.
+- The Gradle properties file (gradle.properties) is used to configure the properties of the build.
+- The Gradle Settings file (settings.gradle) is optional in a build which has only one project. If our Gradle build has more than one projects, it is mandatory because it describes which projects participate to our build. Every multi-project build must have a settings file in the root project of the project hierarchy.
+By [Petrikainulainen](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-introduction/)
 
 ## Build Phases
 1. Initialization 
@@ -103,6 +114,13 @@ Gradle make use of hash in order to determine if a file need to be re-downloaded
 It is possible to delete the folder **cache** inside the folder .gradle 
 
 ## Plugins Blog - Extend project's capabilities
+
+A Gradle plugin can:
+
+- Add new tasks to the project.
+- Provide a default configuration for the added tasks. The default configuration adds new conventions to the project (e.g. the location of source code files).
+- Add new properties which are used to override the default configuration of the plugin.
+- Add new dependencies to the project.
 
 ### Basic Syntax   
 `plugins { java } //kts`
@@ -330,11 +348,14 @@ tasks {
 
 ## Gradle Dependency Management - Repository and Dependencies Block
 ### Get Dependencies from FileSystem
+This means that dependencies are searched from the _lib_ directory. Also, if we want to, we can use multiple directories by adding the following snippet to the _build.gradle_ file:
+
 ```groovy
 repositories {
 
     flatDir {
         dirs 'lib'
+        //dirs 'libA', 'libB'
     }
 
 }
@@ -699,3 +720,5 @@ Wrapper files:
 
 ```
  
+## References
+[Petrikainulainen - getting-started-with-gradle-introduction/](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-introduction/)
