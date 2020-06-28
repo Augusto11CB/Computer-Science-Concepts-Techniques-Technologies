@@ -2,7 +2,7 @@
 This repository aims to store my general studies on concepts, new technologies and techniques of computer science.
 
 * [Spring](https://github.com/AugustoCalado/Spring-Framework-Studies)
- * [Spring - Transaction Management](https://github.com/AugustoCalado/TrackToolz-Transactions-Management-Spring-Kotlin)
+  * [Spring - Transaction Management](https://github.com/AugustoCalado/TrackToolz-Transactions-Management-Spring-Kotlin)
 
 * Programming languages
   * [Java](Java-Studies)
