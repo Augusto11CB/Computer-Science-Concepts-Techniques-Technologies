@@ -1,6 +1,8 @@
 
 # Gradle Build Tool Fundamentals
 
+- [Migrating build logic from Groovy to Kotlin](https://guides.gradle.org/migrating-build-logic-from-groovy-to-kotlin/#creating_tasks)
+
 Gradle has two basic concepts: projects and tasks. These concepts are explained in the following:
 
 -   A  **project**  is either something we build (e.g. a jar file) or do (deploy our application to production environment).  **A project consists of one or more tasks**.
