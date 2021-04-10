@@ -30,6 +30,10 @@ The statement **closed to extension** means that once a class is developed and t
 Generally extension can be achieved by using abstractions for dependencies, such as abstract classes and interfaces rather than using concrete classes.
 
 
+> 100% closure is not attainable, closure must be strategic.
+> We design our classes such that they are closed to the most common kinds of changes that we expect or have experienced.
+> From Robert C Martin's Clean Architeture Book
+
 ## Liskov Substitution Principle
 
 When extending a class, the subclass (the one which inherits a base class), should be able to be passed in place of objects of
