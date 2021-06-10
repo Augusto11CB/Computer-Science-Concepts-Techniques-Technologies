@@ -1,6 +1,4 @@
-
 # Serveless Computing - The Big Picture
-
 ## Definitions
  > Refering to a cloud-computing execution model in which the cloud provider runs the server, and dynamically manages the allocation of machine resources.
 > \- Wikipedia.org
