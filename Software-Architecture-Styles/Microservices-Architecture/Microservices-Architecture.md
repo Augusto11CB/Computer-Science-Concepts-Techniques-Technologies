@@ -6,12 +6,19 @@ Microservices, aka Microservice Architecture, is an architectural style that str
 
 ## Microservices Feature
 Decoupling – Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled
+
 Componentization – Microservices are treated as independent components that can be easily replaced and upgraded
+
 Business Capabilities – Microservices are very simple and focus on a single capability
+
 Autonomy – Developers and teams can work independently of each other, thus increasing speed
+
 Continous Delivery – Allows frequent releases of software, through systematic automation of software creation, testing, and approval
+
 Responsibility – Microservices do not focus on applications as projects. Instead, they treat applications as products for which they are responsible
+
 Decentralized Governance – The focus is on using the right tool for the right job. That means there is no standardized pattern or any technology pattern. Developers have the freedom to choose the best useful tools to solve their problems
+
 Agility – Microservices support agile development. Any new feature can be quickly developed and discarded again
 
 ## Microservices Architecture -  Benefits
