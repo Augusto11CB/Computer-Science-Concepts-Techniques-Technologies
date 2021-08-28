@@ -34,22 +34,22 @@ A very common microservices interview question which you should be ready for! Th
 
 ## Microservices Architecture -  Cons
 * Increases troubleshooting challenges
-* Increases delay due to remote calls
+* **Increases delay due to remote calls**
 * Increased efforts for configuration and other operations
-* Difficult to maintain transaction safety
+* **Difficult to maintain transaction safety**
 * Tough to track data across various boundaries
 * Difficult to code between services
-* 
+ 
 ## Microservices Architecture - Challenges
 * **Automate the Components**: Difficult to automate because there are a number of smaller components. So for each component, we have to follow the stages of Build, Deploy and, Monitor.
-* **Perceptibility**: Maintaining a large number of components together becomes difficult to deploy, maintain, monitor and identify problems. It requires great perceptibility around all the components.
+* **Perceptibility**: Maintaining a large number of components together becomes difficult to deploy, maintain, monitor and **identify problems**. It requires great perceptibility around all the components.
 * **Configuration Management**: Maintaining the configurations for the components across the various environments becomes tough sometimes.
 * **Debugging**: Difficult to find out each and every service for an error. It is essential to maintain centralized logging and dashboards to debug problems.
 
 ## The Fundamentals Of Microservices Design
 // TODO [9 Successful Microservice Design](https://www.lambdatest.com/blog/9-fundamentals-to-a-successful-microservice-design/)
 -   Define a scope
--   Combine loose coupling with high cohesion
+-   **Combine loose coupling with high cohesion**
 -   Create a unique service which will act as an identifying source, much like a unique key in a database table
 -   Creating the correct API and take special care during integration.
 -   Restrict access to data and limit it to the required level
@@ -83,16 +83,68 @@ Reports and dashboards are mainly used to monitor and upkeep microservices. Ther
 -   To obtain a sense of maturity and compliance from the components.
 
 ## Coupling and Cohesion?
-The **coupling** can be considered to be the measurement of **strength between the dependencies of a component.** A good Microservices application design always consists of **low coupling** and **high cohesion**.
+The **coupling** can be considered to be the **measurement of strength between the dependencies of a component.** A good Microservices application design always consists of **low coupling** and **high cohesion**.
 
- Cohesion is also another measurement unit. More like a degree to which the elements inside a module remain bonded together, or **the degree to which the elements inside a module belong together is said to be cohesion.**
+**Cohesion** is also another measurement unit. More like a degree to which the elements inside a module remain bonded together, or **the degree to which the elements inside a module belong together is said to be cohesion.**
 
-The key to design microservices is a composition of low coupling along with high cohesion. **When loosely coupled, a service knows very little about other**. This keeps the services intact. I**n high cohesion, it becomes possible to keep all the related logic in a service**. Otherwise, the services will try to communicate with each other, impacting the overall performance.
+The key to d**esign microservices is a composition of low coupling along with high cohesion**. **When loosely coupled, a service knows very little about other**. This keeps the services intact. **In high cohesion, it becomes possible to keep all the related logic in a service**. Otherwise, the services will try to communicate with each other, impacting the overall performance.
 
 ## REST/RESTful and Microservices
-**Representational state transfer (REST) is a software architectural style** that defines a set of constraints to be used for creating Web services. **Web services that conform to the REST architectural style, called RESTful Web services**, provide interoperability between computer systems on the Internet. RESTful Web services allow the requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of stateless operations. 
+**Representational state transfer (REST) is a software architectural style that _defines a set of constraints_ to be used for creating Web services**. **Web services that _conform to the REST architectural style_, called RESTful Web services**, provide interoperability between computer systems on the Internet. **RESTful Web services allow the requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of _stateless operations_**. 
 
 Microservices can be implemented with or without RESTful APIs, but it’s always easier to build loosely coupled microservices using RESTful APIs.
+
+### The Constraints
+As constraints possuem como objetivo determinar a forma na qual padrões como HTTP e URI deveriam ser modelados, aproveitando de fato todos os recursos oferecidos pelos mesmos.
+
+- #1 Cliente-Servidor
+ - Separar as responsabilidades de diferentes partes de um sistema (ex: separação entre backend e fronted)
+
+- #2 Stateless
+ - Cada requisição ao servidor não deve ter ligação com requisisções anteriores ou futuras, ou seja, cada requisição deve conter todas as informações necessárias para que ela seja tratada com sucesso pelo servidor.
+
+- #3 Cache
+ - Para uma melhor performace, um sistema REST deve permitir que suas respostas sejam passíveis de cache.
+
+
+- #4 Interface Uniforme
+ - Recurso
+ - Mensagens auto-descritivas
+ - Hypermedia (ter o poder de navegar usando retorno de chamadas)
+ 
+- #5 Sistemas em Camadas
+ - Para permitir a escalabilidade necessária para grandes sistemas distribuídos, um sistema REST deve ter a capacidade de adicionar elementos intermediários e que sejam totalmente transparentes para seus clientes
+ - Ex: Versionamentos de endpoints
+
+
+### Resource
+- Definição: São elementos de informação, que através de um identificador global podem ser manipulados.
+- Regra: A nomeação de um recurso sempre é formada por um **substantivo**, nunca um verbo!
+
+### URI
+- Tradução: Uniform Resource Identifier
+- Definição: Uma cadeia de caracteres compacta usada para identificar ou denominar um recurso na internet
+- Exemplo: 
+ - Recurso: Usuário
+ - URI: `www.talk.com/user`
+
+### URL
+- Tradução: Uniform Resource Locator
+- Definição: É o endereço de um recurso disponível em uma rede
+- Exemplo:
+ - Recurso: Usuário
+ - URL: http://www.talk.com/user
+
+### Modelo de Maturidade Richardson
+- Níveis de maturidade que uma aplicação pode atingir ao incorporar rest
+ - #0 POX
+ - #1 Recursos
+ - #2 Verbos HTTP
+ - #3 HATEOS
+
+### HTTP Status Code
+![image](https://user-images.githubusercontent.com/17462762/131224878-c23f3deb-759c-45f9-899e-1da4e93a0a4e.png)
+
 
 ### Role of Web, RESTful APIs in Microservices
 A microservice architecture is based on a concept wherein all its services should be able to interact with each other to build a business functionality. So, to achieve this, each microservice must have an interface. This makes the web API a very important enabler of microservices. Being based on the open networking principles of the Web, RESTful APIs provide the most logical model for building interfaces between the various components of a microservice architecture.
