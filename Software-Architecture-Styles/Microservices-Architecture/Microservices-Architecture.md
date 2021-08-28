@@ -146,6 +146,16 @@ As constraints possuem como objetivo determinar a forma na qual padrões como HT
 ![image](https://user-images.githubusercontent.com/17462762/131224878-c23f3deb-759c-45f9-899e-1da4e93a0a4e.png)
 
 
+### `PATCH` vs `PUT`
+- `PATCH` consegue atualizar o recurso parcialmente
+- `PUT` obrigatóriamente atualiza todo o recurso.
+
+### `PUT` vs `POST`
+- Ambos podem ser utilizados para controlar a criação de recursos
+- **Diferença**
+  - `POST` controle do ID fica por conta do servidor - request não possui ID
+  - `PUT` request possui ID - Controle do ID fica por conta do cliente
+
 ### Role of Web, RESTful APIs in Microservices
 A microservice architecture is based on a concept wherein all its services should be able to interact with each other to build a business functionality. So, to achieve this, each microservice must have an interface. This makes the web API a very important enabler of microservices. Being based on the open networking principles of the Web, RESTful APIs provide the most logical model for building interfaces between the various components of a microservice architecture.
 
