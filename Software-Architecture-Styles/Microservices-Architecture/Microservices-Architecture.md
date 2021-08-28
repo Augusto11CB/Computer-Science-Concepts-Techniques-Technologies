@@ -98,23 +98,23 @@ Microservices can be implemented with or without RESTful APIs, but it’s always
 As constraints possuem como objetivo determinar a forma na qual padrões como HTTP e URI deveriam ser modelados, aproveitando de fato todos os recursos oferecidos pelos mesmos.
 
 - #1 Cliente-Servidor
- - Separar as responsabilidades de diferentes partes de um sistema (ex: separação entre backend e fronted)
+  - Separar as responsabilidades de diferentes partes de um sistema (ex: separação entre backend e fronted)
 
 - #2 Stateless
- - Cada requisição ao servidor não deve ter ligação com requisisções anteriores ou futuras, ou seja, cada requisição deve conter todas as informações necessárias para que ela seja tratada com sucesso pelo servidor.
+  - Cada requisição ao servidor não deve ter ligação com requisisções anteriores ou futuras, ou seja, cada requisição deve conter todas as informações necessárias para que ela seja tratada com sucesso pelo servidor.
 
 - #3 Cache
- - Para uma melhor performace, um sistema REST deve permitir que suas respostas sejam passíveis de cache.
+  - Para uma melhor performace, um sistema REST deve permitir que suas respostas sejam passíveis de cache.
 
 
 - #4 Interface Uniforme
- - Recurso
- - Mensagens auto-descritivas
- - Hypermedia (ter o poder de navegar usando retorno de chamadas)
+  - Recurso
+  - Mensagens auto-descritivas
+  - Hypermedia (ter o poder de navegar usando retorno de chamadas)
  
 - #5 Sistemas em Camadas
- - Para permitir a escalabilidade necessária para grandes sistemas distribuídos, um sistema REST deve ter a capacidade de adicionar elementos intermediários e que sejam totalmente transparentes para seus clientes
- - Ex: Versionamentos de endpoints
+  - Para permitir a escalabilidade necessária para grandes sistemas distribuídos, um sistema REST deve ter a capacidade de adicionar elementos intermediários e que sejam totalmente transparentes para seus clientes
+  - Ex: Versionamentos de endpoints
 
 
 ### Resource
@@ -125,15 +125,15 @@ As constraints possuem como objetivo determinar a forma na qual padrões como HT
 - Tradução: Uniform Resource Identifier
 - Definição: Uma cadeia de caracteres compacta usada para identificar ou denominar um recurso na internet
 - Exemplo: 
- - Recurso: Usuário
- - URI: `www.talk.com/user`
+  - Recurso: Usuário
+  - URI: `www.talk.com/user`
 
 ### URL
 - Tradução: Uniform Resource Locator
 - Definição: É o endereço de um recurso disponível em uma rede
 - Exemplo:
- - Recurso: Usuário
- - URL: http://www.talk.com/user
+  - Recurso: Usuário
+  - URL: http://www.talk.com/user
 
 ### Modelo de Maturidade Richardson
 - Níveis de maturidade que uma aplicação pode atingir ao incorporar rest
