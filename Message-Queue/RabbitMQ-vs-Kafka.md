@@ -1,0 +1,6 @@
+# RabbitMQ vs Apache Kafka
+
+![image](https://user-images.githubusercontent.com/17462762/131662877-03a4817c-92d0-40fb-a4a5-9944b56cc83a.png)
+
+## References
+[When to use RabbitMQ or Apache Kafka](https://www.cloudamqp.com/blog/when-to-use-rabbitmq-or-apache-kafka.html)
