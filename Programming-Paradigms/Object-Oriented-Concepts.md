@@ -1,5 +1,7 @@
 ## The Object Model
 
+> Object model is the collection of principles that form the foundation of object-oriented design; a software engineering paradigm emphasizing the principles of abstraction, encapsulation, modularity, hierarchy, typing, concurrency, and persistence.
+
 ### Objects Definition
 - Stefik and Bobrow define objects as "entities that combine the properties of procedures and data since they perform computations and save local state".
 - Objects serve to unify the ideas of algorithmic and data abstraction.
@@ -35,3 +37,16 @@ A language is object-oriented if and only if it satisfies the following requirem
 
 ### How are OOA, OOD, and OOP related?
 The products of **object-oriented analysis** serve as the models from which an object-oriented design can be started. The products of object-oriented design can then be used as blueprints for completely implementing a system using object-oriented programming method
+
+
+### Elements Object Model
+1. Abstraction
+2. Encapsulation
+3. Modularity
+4. Hierarchy
+
+#### Abstraction
+> An abstraction denotes the essential characteristics of an object that distinguish it from all other kinds of objects and thus provide crisply defined conceptual boundaries, relative to the perspective of the viewer.
+
+- An abstraction focuses on the outside view of an object and so serves to separate an object's essential behavior from its implementation
+- abstraction barrier is achieved by applying the principle of least commitment, through which the interface of an object provides its essential behavior, and nothing more.
