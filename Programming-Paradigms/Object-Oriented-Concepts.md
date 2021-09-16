@@ -103,3 +103,26 @@ The design decisions about how objects cooperate with one another define the bou
  > Booch, G. et al. Object-Oriented Analysis and Design with Applications 
 
 ### Modularity
+
+> Modularization consists of dividing a program into modules which can be compiled separately, but which have connections with other modules. 
+> Booch, G. et al. Object-Oriented Analysis and Design with Applications 
+
+> The connections between modules are the assumptions which the modules make about each other
+> Liskov, B. 1980. A Design Methodology for Reliable Software Systems. In Tutorial on Software Design Techniques. Third Edition. New York, NY: IEEE Computer Society, p. 66.
+
+- Modules serve as the physical containers in which classes and objects of the logical design can be declared.
+
+
+> Modularity is the property of a system that has been decomposed into a set of cohesive and loosely coupled modules.
+> Booch, G. et al. Object-Oriented Analysis and Design with Applications 
+
+#### **Goal of Modularity**
+> The overall goal of the decomposition into modules is the reduction of software cost by allowing modules to be designed and revised independently.... Each module's structure should be simple enough that it can be understood fully; it should be possible to change the implementation of other modules without knowledge of the implementation of other modules and without affecting the behavior of other modules; [and] the ease of making a change in the design should bear a reasonable relationship to the likelihood of the change being needed.
+> Britton and Parnas. A-7E Software, p. 2.
+
+#### Modularity and the Balance of Two Competing Technical Concerns
+1. the desire to encapsulate abstractions 
+2. the need to make certain abstractions visible to other modules
+
+> System details that are likely to change independently should be the secrets of separate modules; the only assumptions that should appear between modules are those that are considered unlikely to change. **Every data structure is private to one module; it may be directly accessed by one or more programs within the module but not by programs outside the module. Any other program that requires information stored in a module's data structures must obtain it by calling module programs**.
+> arnas, D., Clements, P., and Weiss, D. 1983. Enhancing Reusability with Information Hiding. Proceedings of the Workshop on Reusability in Programming, Stratford, CT: ITT Programming, p. 241.
