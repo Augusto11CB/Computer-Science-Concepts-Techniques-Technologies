@@ -114,6 +114,8 @@ The design decisions about how objects cooperate with one another define the bou
 > 
 > \-Booch, G. et al. Object-Oriented Analysis and Design with Applications 
 
+- **encapsulation serves to separate the contractual interface of an abstraction and its implementation.**
+
  #### Implementation of a Class - Definition 
  > The implementation of a class comprises the representation of the abstraction as well as the mechanisms that achieve the desired behavior.
  >
@@ -196,4 +198,8 @@ Get example "is a"
 - Polymorphism is a condition that exists when the features of dynamic typing and inheritance interact.
 - Polymorphism is when a variable declaration may denote objects of many different classes that are related by some common superclass.
 
+### Concurrency
+- Concurrency is the property that distinguishes an active object from one that is not active.
 
+### Persistence
+- Persistence is the property of an object through which its existence transcends time and/or space.
