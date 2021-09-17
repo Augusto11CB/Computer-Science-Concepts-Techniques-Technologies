@@ -147,3 +147,53 @@ The design decisions about how objects cooperate with one another define the bou
 > System details that are likely to change independently should be the secrets of separate modules; the only assumptions that should appear between modules are those that are considered unlikely to change. **Every data structure is private to one module; it may be directly accessed by one or more programs within the module but not by programs outside the module. Any other program that requires information stored in a module's data structures must obtain it by calling module programs**.
 >
 > \- Parnas, D., Clements, P., and Weiss, D. 1983. Enhancing Reusability with Information Hiding. Proceedings of the Workshop on Reusability in Programming, Stratford, CT: ITT Programming, p. 241.
+
+
+### Hierarchy
+> Hierarchy is a ranking or ordering of abstractions
+> 
+> \- Booch, G. et al. Object-Oriented Analysis and Design with Applications 
+
+#### Inheritance
+- Inheritance defines a relationship among classes, wherein one class shares the structure or behavior defined in one.
+- Inheritance defines an **"is a"** hierarchy among classes in which a subclass inherits from generalized superclasses
+- Superclasses represent abstractions, and subclasses represent specializations
+- A Subclass can augments or redefines the existing strcuture or behavior of its superclass (fields and methods from the superclass are added, modified, or even hidden).
+
+
+Get example "is a"
+
+#### Aggregation
+> A whole/part relationship where one object is composed of one or more other objects, each of which is considered a part of the whole. This relationship is a weak form of containment in that the lifetimes of the whole and its parts are independent.
+> 
+> \- Booch, G. et al. Object-Oriented Analysis and Design with Applications 
+
+- The "is a" hierarchies denote generalization/specialization relationships,** "part of"** hierarchies describe **aggregation relationships**
+- In terms of its "part of" hierarchy, a class is at a higher level of abstraction than any of the classes that make up its implementation.
+    - Supose a garden consists of a collection of **plants** together with a **growing plan**. The class Garden is at a higher level of abstraction than the type Plant, on which it builds. 
+
+### Typing
+> Typing is the enforcement of the class of an object, such that objects of different types may not be interchanged, or at the most, they may be interchanged only in very restricted ways.
+> 
+> \- Booch, G. et al. Object-Oriented Analysis and Design with Applications 
+
+- Strong typing prevents mixing of abstractions.
+- Strong typing allow the use of programming language to **enforce certain design decisions** and so is relevant as the complexity of systems grow.
+
+#### Benefits strong typed languages
+> - Without type checking, a program in most languages can 'crash' in mysterious ways at runtime.
+> - In most systems, the edit-compile-debug cycle is so tedious that early error detection is indispensable.
+> - Type declarations help to document programs.
+> - Most compilers can generate more efficient object code if types are declared.
+> 
+>  Tesler, L. August 1981. The Smalltalk Environment. Byte vol. 6(8), p. 142.
+
+#### Static and Dynamic Typing
+- Static typing means that the types of all variables and expressions are fixed at the time of compilation.
+- Dynamic typing means that the types of all variables and expressions are not known until runtime. 
+
+#### Polymorphism
+- Polymorphism is a condition that exists when the features of dynamic typing and inheritance interact.
+- Polymorphism is when a variable declaration may denote objects of many different classes that are related by some common superclass.
+
+
