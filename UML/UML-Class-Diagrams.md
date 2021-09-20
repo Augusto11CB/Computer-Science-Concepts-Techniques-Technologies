@@ -46,3 +46,27 @@
 - Appears as an association with an **unfilled diamond** at the end denoting the aggregate (the whole)
 
 ### Composition
+
+## Reference
+- https://www.google.com/search?q=Association+Classes+uml&oq=Association+Classes+uml&aqs=chrome..69i57.1820j0j7&sourceid=chrome&ie=UTF-8
+- http://etutorials.org/Programming/UML/Chapter+6.+Class+Diagrams+Advanced+Concepts/Association+Class/
+- https://www.uml-diagrams.org/association.html
+- https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+- https://stackoverflow.com/questions/2699210/association-name-direction-in-uml-use-case-diagram
+- https://support.ptc.com/help/modeler/r9.1/en/index.html#page/Integrity_Modeler/rtsme/overview_of_associations.html
+- https://support.ptc.com/help/modeler/r9.1/en/index.html#page/Integrity_Modeler/rtsme/ref_di_association.html#wwID0E4HHS
+- https://support.ptc.com/help/modeler/r9.1/en/index.html#page/Integrity_Modeler/rtsme/ref_prop_name_direction.html#wwID0E6L4Y
+- https://support.ptc.com/help/modeler/r9.1/en/index.html#page/Integrity_Modeler/rtsme/ref_di_role.html#wwID0EQJWV
+- https://creately.com/blog/diagrams/class-diagram-relationships/
+- https://www.ibm.com/docs/en/rational-soft-arch/9.5?topic=diagrams-qualifiers-association-ends
+- https://stackoverflow.com/questions/67648635/what-is-an-association-end-in-uml
+- https://stackoverflow.com/questions/18813549/association-owned-by-classifier-and-association-owned-by-relationship-in-uml
+- https://www.google.com/search?q=association+class+in+a+class&oq=association+class+in++a+class&aqs=chrome..69i57j69i60l3.10811j0j7&sourceid=chrome&ie=UTF-8
+- https://stackoverflow.com/questions/62094457/i-dont-understand-association-class-uml-class-diagram
+- https://stackoverflow.com/questions/13443724/uml-how-to-implement-association-class-in-java
+- https://stackoverflow.com/questions/67048791/uml-association-class-in-multiple-relations
+- https://www.bouml.fr/
+- https://wiki.c2.com/?AssociationClass
+- https://knowhow.visual-paradigm.com/uml/association-class/
+- https://github.com/AugustoCalado/Computer-Science-Concepts-Techniques-Technologies/tree/master/UML
+
