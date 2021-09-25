@@ -6,6 +6,11 @@
     - classes
     - relationships
 
+
+## UML Diagrams
+![image](https://user-images.githubusercontent.com/17462762/134780514-bbf1b0eb-1818-4dc4-8881-ba0babbecfa2.png)
+
+
 ## Class Notation
 - A name is required for each class and must be unique to its enclosing namespacec
 - Attribute specification format: `visibility attributeName : Type [multiplicity] = DefaultValue {property string}`
