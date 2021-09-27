@@ -101,6 +101,14 @@ image reference: Booch, G. et al. Object-Oriented Analysis and Design with Appli
 
 image reference: Booch, G. et al. Object-Oriented Analysis and Design with Applications
 
+### Realization
+
+### Dependency
+![image](https://user-images.githubusercontent.com/17462762/134895983-5150a6cc-5fff-421e-8ad4-d99198c0be7f.png)
+- [TODO](https://stackoverflow.com/questions/26982886/uml-relationships-dashed-line-vs-solid-line)
+- TODO PPT 8 - OO
+
+
 ### Visibility
 
 - `Public (+)` Visible to any element that can see the class
