@@ -34,6 +34,10 @@
 
 image reference: [creately](https://creately.com/blog/diagrams/class-diagram-relationships/)
 
+- [link 1](https://stackoverflow.com/questions/27660499/open-arrow-with-solid-line-in-uml?lq=1)
+- [link 2](https://uml.gitbook.io/learning-uml-with-visual-paradigm/class-diagram-tutorial/)
+- [link 3](http://www.cs.bsu.edu/homepages/pvgestwicki/misc/uml/)
+
 <br>
 
 - Each relationship may include a textual label that document the name of the relationship or the association ends may have textual label as well to indicate the roles of an association
