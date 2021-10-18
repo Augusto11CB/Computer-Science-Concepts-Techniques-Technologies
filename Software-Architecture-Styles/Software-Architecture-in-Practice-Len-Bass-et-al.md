@@ -57,8 +57,56 @@ They decided not to define architecture of a system by being good or bad, instea
 
 <br>
 
-- **Enterprise Architecture**
+- **Enterprise Architecture** is a description of the structure and behavior of an organization’s processes, information flow, personnel, and organizational subunits. A modern enterprise architecture is concerned with how software systems support the enterprise’s business processes and goals
 
+#### Three Kinds of Structure
+
+1. Component-and-Connector (C&C)
+
+C&C focus on the fashion the elements interact with each other at **runtime** to carry out the system's functions.
+- Runtime behavior == components
+    - Components are the principal units of computation
+- interactions == connectors
+    - Connectors are the communication vehicles among components
+
+> C&C structures help answer questions such as the following:
+> 
+>   - What are the major executing components and how do they interact at runtime?
+> 
+>   - What are the major shared data stores?
+> 
+>   - Which parts of the system are replicated?
+> 
+>   - How does data progress through the system?
+> 
+>   - Which parts of the system can run in parallel?
+> 
+>   - Can the system’s structure change as it executes and, if so, how?
+>
+> \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+
+2. Module Structures
+
+Module structures show how a system is structured as a set of code or data units that have to be constructed or procured. Those modules are assigned with specific responsibilities.
+
+The elements that make up the module are: perhaps classes, packages, layers, or merely divisions of functionality, all of which are units of implementation.
+
+Modules represent a static way of considering the system.
+
+> Module structures allow us to answer questions such as the following:
+> 
+>   - What is the primary functional responsibility assigned to each module?
+> 
+>   - What other software elements is a module allowed to use?
+> 
+>   - What other software does it actually use and depend on?
+> 
+>   - What modules are related to other modules by generalization or specialization (i.e., inheritance) relationships?
+>
+> \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+3. Allocation structures 
 
 ### Why Is Software Architecture Important?
 
