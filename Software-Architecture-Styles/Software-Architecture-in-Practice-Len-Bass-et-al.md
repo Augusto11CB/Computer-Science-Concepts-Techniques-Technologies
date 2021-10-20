@@ -134,14 +134,14 @@ Reasos to motivate the creation of a new architecture, or the analysis and evolu
 
 - The changes can be splited in 3 categories
     - local
-        - Accomplished by modifying a single element
-        - Ex: Create/Implement a new bussiness rule
+        - Accomplished by modifying a single element.
+        - Ex: Create/Implement a new bussiness rule.
     - non-local
-        - Result in modifications in multiple elements
-        - Leaves the underlying architectural approach intact
-        - Ex: Create/Implement a new bussiness rule + adding new fields to the database  + changes in the interface
+        - Result in modifications in multiple elements.
+        - Leaves the underlying architectural approach intact.
+        - Ex: Create/Implement a new bussiness rule + adding new fields to the database  + changes in the interface.
     - architectural
-        - Ex: changing a single-threaded system to a multi-threaded
+        - Ex: changing a single-threaded system to a multi-threaded.
 
 - In order to determine which change paths have the least risk, when changes are necessary/essential, and what are the consequences of proposed changes all require a deep understandment of the relationships, behaviors and performance of the elements of the system.
 
@@ -149,8 +149,28 @@ Reasos to motivate the creation of a new architecture, or the analysis and evolu
 
 > Architecture not only imbues systems with qualities, but does so in a predictable way.
 >
-> if we know that certain kinds of architectural decisions lead to certain quality attributes in a system, then we can make those decisions and rightly expect to be rewarded with the associated quality attributes. A
+> if we know that certain kinds of architectural decisions lead to certain quality attributes in a system, then we can make those decisions and rightly expect to be rewarded with the associated quality attributes. 
 > 
-> \- Booch, G. et al. Object-Oriented Analysis and Design with Applications
+> \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+#### 4. Communication among Stakeholders
+- Architecture is an abstraction that can be used by stakeholders as a basis for creating understandiment, perform negotiation, form consensus and communicating with each other.
+    - Each stackeholder has a different concern about the system.
+    - Architecture provires common language in which different concerns can be addressed,
+
+#### 5. Early Design Decisions
+- Architecture is the manifestation of the earliest design decisions about a system (BASS, Len et al.).
+- These decisions have disproportionate weight with the respect to the system's remanining development because they influence and constrain much of what follows.
+
+#### 6. Constraints on Implementation
+- implementation must conform to the design decisions prescribed by the architecture
+- interaction between elements, fulfillment of responsibilities all of these things can be restricted by architecture and must be implemented according to  its guidelines.
+
+#### 7. Influences on organizational Structure
+- Architecture has its effects on the structure of the development project (and somethimes in the structure of the entire organization)
+- Work-breakdown structure of a system is manifested in the architecture (work assignment structure)
+    - Work-breakdown structure dictates units of planning, scheduling and budget; interteam communication channels etc
+    - A side effect of establishing the work-breakdown structure is to freeze some aspects of the software architecture (BASS, Len et al.).
+- Conway’s law states that “organizations which design systems . . . are constrained to produce designs which are copies of the communication structures of these organizations.” (Melvin E. Conway. “How Do Committees Invent?”)
 
 ### Understanding Quality Attributes
