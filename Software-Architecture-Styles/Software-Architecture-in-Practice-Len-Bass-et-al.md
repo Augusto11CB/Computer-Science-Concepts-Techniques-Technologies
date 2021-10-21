@@ -173,4 +173,13 @@ Reasos to motivate the creation of a new architecture, or the analysis and evolu
     - A side effect of establishing the work-breakdown structure is to freeze some aspects of the software architecture (BASS, Len et al.).
 - Conway’s law states that “organizations which design systems . . . are constrained to produce designs which are copies of the communication structures of these organizations.” (Melvin E. Conway. “How Do Committees Invent?”)
 
+## Part II - Quality Attributes
 ### Understanding Quality Attributes
+- (ISO 25010) defines functional suitability as “the capability of the software product to provide functions which meet stated and implied needs when the software is used under specified conditions.”
+
+<br>
+
+> Functionality describes what the system does and quality describes how well the system does its function. That is, **qualities are attributes of the system** and **function is the purpose of the system**.
+> 
+> \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
