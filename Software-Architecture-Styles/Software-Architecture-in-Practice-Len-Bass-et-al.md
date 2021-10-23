@@ -171,7 +171,7 @@ Reasos to motivate the creation of a new architecture, or the analysis and evolu
 - Work-breakdown structure of a system is manifested in the architecture (work assignment structure)
     - Work-breakdown structure dictates units of planning, scheduling and budget; interteam communication channels etc
     - A side effect of establishing the work-breakdown structure is to freeze some aspects of the software architecture (BASS, Len et al.).
-- Conway’s law states that “organizations which design systems . . . are constrained to produce designs which are copies of the communication structures of these organizations.” (Melvin E. Conway. “How Do Committees Invent?”)
+- Conway’s law states that “organizations which design systems . . . are constrained to produce designs which are copies of the communication structures of these organizations.” (Melvin E. Conway. “How Do Committees Invent?”).
 
 ## Part II - Quality Attributes
 ### Understanding Quality Attributes
@@ -179,7 +179,53 @@ Reasos to motivate the creation of a new architecture, or the analysis and evolu
 
 <br>
 
+#### Discution about Functional Requirements
 > Functionality describes what the system does and quality describes how well the system does its function. That is, **qualities are attributes of the system** and **function is the purpose of the system**.
 > 
 > \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
 
+About de above definition, the autors do not complete agree with what were. As an example to explain the disagreement they have with the ISO's definition is a  a software that controls engine behavior. They state "how can the function be correctly implemented without considering timing behavior?"
+
+In order to describe **computations that a system must perform** they coined the term "**responsibility**".
+    - “What are the timing constraints on that set of responsibilities?”
+    - “What modifications are anticipated with respect to that set of responsibilities?”
+    - Above are some questions that make sense and are actionable in terms of "**resposibility**".
+    
+### Quality Attribute Considerations
+- there is two main categories of quality attributes. 
+    - The **first category** contains the attributes that describe **properties** of the **system at runtime**.
+    - The **secondy category** includes those attributes that describe **properties** of the **development of the system** (e.g. modifiability, testability, or deployability).
+
+- The achievement of a quality attribute can never be done in isolation. There will be always effects on the others attributes - sometimes positve and sometimes negative.
+    - Ex: almost every quality attribute negatively affects performance. The authors comment about the attribute portability. To achieve portability system dependencies must be isolated. This introduces overhead into the system's execution, which then reduce performance.
+
+#### Three Problems in Discussions of System Quality Attributes
+1. The definitions provided for an attribute are not testable
+    - A system must be modifiable
+        - Systems will be modifiable with the respect to one set of changes and not modifiable with respect to another.
+    - A system must be robust
+
+2. Discussion often focuses on which quality a particular issue belongs to.
+    - DDoS, which system aspect it belongs?
+        - performance, security, or usability? According to the autors, this kind of debate over categorization doesn't help understand and create architectural solutions to actually manage the attributes of concern.
+
+3. Each attribute community has developed its own vocabulary
+    - Events == performance communit.
+    - Attacks == security community.
+    - Faults == availability community.
+    - All of these terms may refer to the same thing, but they are described using different terms.
+
+### Quality Attribute Scenarios
+- Quality attribute scenarios have six parts:
+
+1. Stimulus: Describe the event that arrives at the system or project.
+2. Stimulus source: from where the stimulus came from  (a human, a computer system, or any other actor).
+3. Response: resultanting activity that occurs after the arrival of the stimulus.
+4. Response measure: response shoud be measurable in some way in order to allow the execution and application of tests.
+5. environment: set of circumstances where the scenario takes place (often this refers to a runtime state)
+6. artifact: the target of the stimulus
+
+![Image from BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021](https://user-images.githubusercontent.com/17462762/138536770-8272ec43-16df-4ff5-8500-0349389b380a.png)
+- Image from BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+###  Achieving Quality Attributes through Architectural Patterns and Tactics
