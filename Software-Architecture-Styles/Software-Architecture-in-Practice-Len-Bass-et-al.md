@@ -199,6 +199,8 @@ In order to describe **computations that a system must perform** they coined the
 - The achievement of a quality attribute can never be done in isolation. There will be always effects on the others attributes - sometimes positve and sometimes negative.
     - Ex: almost every quality attribute negatively affects performance. The authors comment about the attribute portability. To achieve portability system dependencies must be isolated. This introduces overhead into the system's execution, which then reduce performance.
 
+- "Quality attribute requirements are satisfied by the structures and behaviors of the architecture." (BASS, Len et al.) 
+
 #### Three Problems in Discussions of System Quality Attributes
 1. The definitions provided for an attribute are not testable
     - A system must be modifiable
@@ -228,4 +230,27 @@ In order to describe **computations that a system must perform** they coined the
 ![Image from BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021](https://user-images.githubusercontent.com/17462762/138536770-8272ec43-16df-4ff5-8500-0349389b380a.png)
 - Image from BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
 
-###  Achieving Quality Attributes through Architectural Patterns and Tactics
+### Achieving Quality Attributes through Architectural Patterns and Tactics
+- **Tatic**: design decision (design techniques) that affects how a quality attribute response is going to be achieved.
+    - "Tactics give the architect insight into the properties of the resulting design fragment" (BASS, Len et al.)
+
+> An architectural pattern describes a particular recurring design problem that arises in specific design contexts and presents a well-proven architectural solution for the problem
+> 
+> \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+What we mean by the term "solution" mentioned in the quote above is a description of the roles of the architectural elements, their responsibilities and relationships, and the way they collaborate with each other.
+
+There is no silver bullet, patterns often are a combination of a set of fine tactics, however we must keep in mind that frequently tradeoffs needed to be made among the quality attributes.
+
+As the software ages its architecture often evolve and transform as a result of many small decisions and business force, it can lead to a problem called "death by a thousand cuts". This problem occurs when developers make suboptimal decisions due to several factors such as schedule pressuers, or lack of understanding of the structures of the system. This situation also is called **Architecture debt**.
+
+### Analyzing Quality Attribute Design Decisions - Tactics-Based Questionnaires
+> 1. For each tactics question, fill the “Supported” column with “Y” if the tactic is supported in the architecture and with “N” otherwise.
+> 
+> 2. If the answer in the “Supported” column is “Y,” then in the “Design Decisions and Location” column describe the specific design decisions made to support the tactic and enumerate where these decisions are, or will be, manifested (located) in the architecture. For example, indicate which code modules, frameworks, or packages implement this tactic.
+> 
+> 3. In the “Risk” column indicate the risk of implementing the tactic using a (H = High, M = Medium, L = Low) scale.
+> 
+> 4. In the “Rationale” column, describe the rationale for the design decisions made (including a decision to not use this tactic). Briefly explain the implications of this decision. For example, explain the rationale and implications of the decision in terms of the effort on cost, schedule, evolution, and so forth.
+> 
+> \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
