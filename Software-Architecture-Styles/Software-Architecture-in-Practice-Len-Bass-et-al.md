@@ -254,3 +254,27 @@ As the software ages its architecture often evolve and transform as a result of 
 > 4. In the “Rationale” column, describe the rationale for the design decisions made (including a decision to not use this tactic). Briefly explain the implications of this decision. For example, explain the rationale and implications of the decision in terms of the effort on cost, schedule, evolution, and so forth.
 > 
 > \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+### Availability
+- reliability == performs according to its specifications
+- availability builds on the concept of reliability by adding the notion of recovery
+    - it includes the ability of a system to hide (mask) or repair faults so they do not become failures
+- failure is the visible deviation of the system of its specification
+- a failure's cause is called fault
+-  understand the nature of the failures that can happen during operation is high demanding task while building high-availability fault-tolerant system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
