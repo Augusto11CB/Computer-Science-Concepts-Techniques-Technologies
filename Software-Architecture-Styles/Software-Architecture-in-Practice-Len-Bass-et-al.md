@@ -261,18 +261,55 @@ As the software ages its architecture often evolve and transform as a result of 
     - it includes the ability of a system to hide (mask) or repair faults so they do not become failures
 - failure is the visible deviation of the system of its specification
 - a failure's cause is called fault
--  understand the nature of the failures that can happen during operation is high demanding task while building high-availability fault-tolerant system.
 
+- **Fault vs Failures**
+    - If there is a fault in a code that is executed and this fault araise but the system is able to recover from the fault without any visible deviation from its specification, then it is safe to thai that no failure has occured.
 
+- understand the nature of the failures that can happen during operation is high demanding task while building high-availability fault-tolerant system.
 
+- System downtime refers to periods when a system is unavailable.
+- only **unscheduled outages** contribute to **system downtime**.
 
+#### Availability General Scenario
+**TODO Get Table **
 
+#### Tactics for Availability
+- Fault Detection
+- Fault Recovery
+- Fault Prevention
 
+![Figure 4.3 - BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021](https://user-images.githubusercontent.com/17462762/138689218-3a65535f-470a-4e5b-a793-9ed05a36bf4b.png)
+- Image from BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
 
+##### Detect Faults
+- Monitor
+    - The monitor is a component that orchestrates software using other detection faults tactics to identify malfunctioning components.
+- Watchdog
+    - Watchdog is a specialization of the monitor, in which the detection mecanism employed uses a counter or timer that periodically reset
+- Ping/echo
+- Heartbeat
+- Timestamp
+- Condition monitoring
+- Sanity Checking
+- Voting
+    - Replication
+    - Functional Redundancy
+    - Analytic Redundancy
+- Exception detection
+    - System exceptions
+    - Parameter fence tactic
+    - Parameter typing employs
+    - timout
+- Self-test
 
+##### Recover From Faults
+Tactics about recover from faults are categorizes into two types. The first is preparation and repair tactics, and the second is reintroduction tactics.
 
+- **Preparation and repair tactics**
+    - Redundant spare
 
-
+- **Reintroduction**
+    - Shadow
 
 
 
