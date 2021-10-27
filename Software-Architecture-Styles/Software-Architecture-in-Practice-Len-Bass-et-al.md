@@ -307,11 +307,31 @@ Tactics about recover from faults are categorizes into two types. The first is p
 
 - **Preparation and repair tactics**
     - Redundant spare
+    - Rollback
+    - Exception handling
+    - Software upgrade
+    - Retry
+    - Ignore faulty behavior
+    - Graceful degradation
+    - Reconfiguration
+    - **TODO** Create separated README to alocate more info about this topic
 
 - **Reintroduction**
     - Shadow
+    - State resynchronization
+    - Escalating restart
+    - Nonstop forwarding
+    - **TODO** Create separated README to alocate more info about this topic
 
+#####**Prevent Faults**
+- Removal from service
+- Transactions
+- Predictive model
+- Exception prevention
+- Increase competence set
+- **TODO** Create separated README to alocate more info about this topic
 
+#### Tactics-Based Questionnaire for Availability
+**TODO Get Table **
 
-
-
+#### Patterns for Availability
