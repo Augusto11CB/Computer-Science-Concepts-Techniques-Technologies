@@ -335,3 +335,26 @@ Tactics about recover from faults are categorizes into two types. The first is p
 **TODO Get Table **
 
 #### Patterns for Availability
+- Active Redundancy (hot spare)
+- Passive Redundancy (warm spare)
+- Cold spare (spare)
+- Triple Modular Redundancy (TMR)
+- **Circuit Breaker**
+- Process pairs
+- Forward error recovery
+
+#### References for the Chapter Availability
+- HAMMER, Robert. Patterns for Fault Tolerant Software, Wiley Software Patterns Series, 2013
+- SCOTT, James and KAZMAN, Rick. Realizing and Refining Architectural Tactics: Availability, 2009
+- NYGARD, Michael. Release It!: Design and Deploy Production-Ready Software, 2007
+- UTAS, Greg Robust Communications Software: Extreme Availability, Reliability and Scalability for Carrier-Grade Systems, 2005
+
+### Deployability
+- In the old days, releases were infrequent, large numbers of changes were bundled into releases and schedules. Each release could contain new features and bug fixes. Due to competitive pressures in many domains there was a need for shorter releases cycles.
+
+#### Continuous Deployment
+Deployment can be defined as a process that start with the coding activity and only ends when real users receive and iteract with the system's new version in a production environment.
+
+**Continuous deployment** is when the deployment **process** if fully automated and **do not require human intervention**. Howerver, if some sort of **human interaction is required** to place the system into production (e.g due to regulations or policies), this **process** is called **continuous delivery**
+
+**Deployment pipeline**
