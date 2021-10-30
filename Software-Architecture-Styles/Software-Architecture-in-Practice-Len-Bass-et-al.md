@@ -1,5 +1,40 @@
 # Notes - Software Architecture in Practice 4th Edition de Len Bass et al.
 
+- [Notes - Software Architecture in Practice 4th Edition de Len Bass et al.](#notes---software-architecture-in-practice-4th-edition-de-len-bass-et-al)
+  - [Introduction](#introduction)
+  - [Part I - Introduction](#part-i---introduction)
+    - [What Is Software Architecture?](#what-is-software-architecture)
+      - [Definition of a "Good Architecture" for the Authors](#definition-of-a-good-architecture-for-the-authors)
+      - [Architecture and Behavior](#architecture-and-behavior)
+      - [System Architecture and Enterprise Architecture](#system-architecture-and-enterprise-architecture)
+      - [Three Kinds of Structure](#three-kinds-of-structure)
+    - [Why Is Software Architecture Important?](#why-is-software-architecture-important)
+      - [1. Inhibiting or Enabling a System’s Quality Attributes](#1-inhibiting-or-enabling-a-systems-quality-attributes)
+      - [2. Reasoning about and Managing Change](#2-reasoning-about-and-managing-change)
+      - [3. Predicting System Qualities](#3-predicting-system-qualities)
+      - [4. Communication among Stakeholders](#4-communication-among-stakeholders)
+      - [5. Early Design Decisions](#5-early-design-decisions)
+      - [6. Constraints on Implementation](#6-constraints-on-implementation)
+      - [7. Influences on organizational Structure](#7-influences-on-organizational-structure)
+  - [Part II - Quality Attributes](#part-ii---quality-attributes)
+    - [Understanding Quality Attributes](#understanding-quality-attributes)
+      - [Discution about Functional Requirements](#discution-about-functional-requirements)
+    - [Quality Attribute Considerations](#quality-attribute-considerations)
+      - [Three Problems in Discussions of System Quality Attributes](#three-problems-in-discussions-of-system-quality-attributes)
+    - [Quality Attribute Scenarios](#quality-attribute-scenarios)
+    - [Achieving Quality Attributes through Architectural Patterns and Tactics](#achieving-quality-attributes-through-architectural-patterns-and-tactics)
+    - [Analyzing Quality Attribute Design Decisions - Tactics-Based Questionnaires](#analyzing-quality-attribute-design-decisions---tactics-based-questionnaires)
+    - [Availability](#availability)
+      - [Availability General Scenario](#availability-general-scenario)
+      - [Tactics for Availability](#tactics-for-availability)
+        - [Detect Faults](#detect-faults)
+        - [Recover From Faults](#recover-from-faults)
+      - [Tactics-Based Questionnaire for Availability](#tactics-based-questionnaire-for-availability)
+      - [Patterns for Availability](#patterns-for-availability)
+      - [References for the Chapter Availability](#references-for-the-chapter-availability)
+    - [Deployability](#deployability)
+      - [Continuous Deployment](#continuous-deployment)
+## Introduction
 The basic principle of software architecture is every software system is constructed to satisfy an organization’s business goals, and that the architecture of a system **is a bridge between those (often abstract) business goals and the final (concrete) resulting system**.
 
 <br>
@@ -271,7 +306,7 @@ As the software ages its architecture often evolve and transform as a result of 
 - only **unscheduled outages** contribute to **system downtime**.
 
 #### Availability General Scenario
-**TODO Get Table **
+- [Availability General Scenario](https://github.com/AugustoCalado/Books-Repository/blob/main/Books-Highlights/Software-Architecture-in-Practice-Len-Bass-et-al/Availability-General-Scenario.md)
 
 #### Tactics for Availability
 - Fault Detection
@@ -332,7 +367,7 @@ Tactics about recover from faults are categorizes into two types. The first is p
 - **TODO** Create separated README to alocate more info about this topic
 
 #### Tactics-Based Questionnaire for Availability
-**TODO Get Table **
+[Tactics-Based Questionnaire for Availability](https://github.com/AugustoCalado/Books-Repository/blob/main/Books-Highlights/Software-Architecture-in-Practice-Len-Bass-et-al/Tactics-Based-Questionnaire-for-Availability.md)
 
 #### Patterns for Availability
 - Active Redundancy (hot spare)
