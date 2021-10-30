@@ -131,7 +131,7 @@ image reference: Booch, G. et al. Object-Oriented Analysis and Design with Appli
 
 
 ### **Association End** Names 
-
+- The association end name is commonly referred to as role name
 - A role denotes the purpose or capacity wherein one class associates with another.
 
 ### Qualifier
