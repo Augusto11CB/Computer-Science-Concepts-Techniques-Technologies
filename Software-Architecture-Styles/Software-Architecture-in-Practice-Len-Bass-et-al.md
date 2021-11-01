@@ -34,6 +34,7 @@
       - [References for the Chapter Availability](#references-for-the-chapter-availability)
     - [Deployability](#deployability)
       - [Continuous Deployment](#continuous-deployment)
+      - [Deployability General Scenario](#deployability-general-scenario)
 ## Introduction
 The basic principle of software architecture is every software system is constructed to satisfy an organization’s business goals, and that the architecture of a system **is a bridge between those (often abstract) business goals and the final (concrete) resulting system**.
 
@@ -386,10 +387,43 @@ Tactics about recover from faults are categorizes into two types. The first is p
 
 ### Deployability
 - In the old days, releases were infrequent, large numbers of changes were bundled into releases and schedules. Each release could contain new features and bug fixes. Due to competitive pressures in many domains there was a need for shorter releases cycles.
+- Deployability is a property of a software to be allocated to an environment for execution.
+- If a deploy is not meeting its specifications, it can be rolled back with acceptable (and predictable) amount of time and effort.
+
+- Due to high adoption of virtualization and cloud infrastructure as well as the need for scale the number of software deployed, it is one of the architect’s responsibilities to ensure that deployment is done in an efficient and predictable way (minimizing overall system risk).
+
+
+- Architect's concerns when design an architecture to ensure continuous deployment.
 
 #### Continuous Deployment
 Deployment can be defined as a process that start with the coding activity and only ends when real users receive and iteract with the system's new version in a production environment.
 
-**Continuous deployment** is when the deployment **process** if fully automated and **do not require human intervention**. Howerver, if some sort of **human interaction is required** to place the system into production (e.g due to regulations or policies), this **process** is called **continuous delivery**
+- **Continuous Deployment vs Continuous Delivery**
+    - **Continuous deployment** is when the deployment **process** if fully automated and **do not require human intervention**. Howerver, if some sort of **human interaction is required** to place the system into production (e.g due to regulations or policies), this **process** is called **continuous delivery**.
+    - continuous deployment requires continuous automated testing.
 
-**Deployment pipeline**
+- **Deployment pipeline**
+    - Sequence of tools and activities involved in the proccess to delivery software that was added to the version control system to the end users in production environment.
+    - Each stage in the deployment pipeline tipically takes place in different kinds of environments established to support isolation and perform actions appropriate to that stage
+        - Major environments:
+            - Development environment is where the code is developed. Where the code is subject to standalone unit tests. Once all unit test passes, and after the code review, the modifications are committed to a version control system. The commit action triggers the build activities in the integration environment.
+            - Integration environment is where a continuous integration server compiles the changed code. Also, integration tests are performed (run unit test from various mudles as well ass integration tests designed for the whole system). When the various tests are passed, the built service is promoted to the staging environment.
+            - Staging Environmenti is where various qualities of the system are tested. These include performance test, security testing, license conformance checks, and user testing. Once the application passes all the staging tests, it is deployed to the prod environment, using blue/green model or a rolling upgraded.
+        - Summary: Different tests are performed in each environment, from unit test of a single module in dev environment, to functional test of all components that compose the service in the integration environment, and ending with quality test in stg environment.
+
+- **Measuring Quality in Pipelines**
+    - **Cycle time:** pace of the progress through the pipeline. In order to achieve a rapid deployment (several or even hundreds of times a day), humam intervation must be minimized.
+    - **Traceability:** being able to recover all the artifacts that led to an element having a problem (code and dependencies, executed test cases).
+    - **Repeatability:** Get the same result after execute the action/process with the same artifacts
+        > This is not as easy as it sounds. For example, suppose your build process fetches the latest version of a library. The next time you execute the build process, a new version of the library may have been released. As another example, suppose one test modifies some values in the database. If the original values are not restored, subsequent tests may not produce the same results.
+        > 
+        > \- BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
+- **DevOps**
+    - DevOps's goal is to shorten the time between make a change in an existing system (feature, bug fix), and this changes being placed into normal production, while ensuring high quality.
+    - Increase frequency of releases and perform bug fixes on demand.
+    - DevOps include logging and post-deployment monitoring.
+
+#### Deployability General Scenario
+
+
