@@ -392,8 +392,26 @@ Tactics about recover from faults are categorizes into two types. The first is p
 
 - Due to high adoption of virtualization and cloud infrastructure as well as the need for scale the number of software deployed, it is one of the architect’s responsibilities to ensure that deployment is done in an efficient and predictable way (minimizing overall system risk).
 
+- Architect's concerns when design an architecture to ensure continuous deployment:
+    - How does the software arrive at its host (push, where updates deployed are unbidden, or pull, where users or administrators must explicitly request updates)?
+    - How is software integrated into an existing system?
+    - What is the medium, such as USB drive, or Internet Delivery?
+    - What is the packaging (e.g., app, executable)?
+    - What is the result integration into an existing system?
+    - what is the efficiency of executing the process?
+    - what is the controllability of the process?
 
-- Architect's concerns when design an architecture to ensure continuous deployment.
+- Granularity of deployment
+    - Granular: Deployment can be of the entire system or of elements within a system. If the architecture support finer granularity of deployment, certain risks can be reduced.
+    - Controllable: The process of deployment should capable to deploy at varying levels of granularity, monitor the operation of the deployed elements, and rollback if needed in case of an unsuccessful deployment happens.
+    - Efficient: The architecture should sustain a process of rapid deployment (and rollback as well).
+
+<br>
+
+> The deployment is successful if these new elements are deployed within acceptable time, cost, and quality constraints. 
+> 
+> -\ BASS, Len et al. Software Architecture in Practice, Addison-Wesley, 2021
+
 
 #### Continuous Deployment
 Deployment can be defined as a process that start with the coding activity and only ends when real users receive and iteract with the system's new version in a production environment.
@@ -425,5 +443,49 @@ Deployment can be defined as a process that start with the coding activity and o
     - DevOps include logging and post-deployment monitoring.
 
 #### Deployability General Scenario
+TODO get table
 
+#### Deployability Tactics
+- Manage Deployment Pipeline
+    - Scale Rollouts
+    - Script Deployment Commands
+    - Rollback
+- Manage Deployed System
+    - Manage Service Interactions
+    - Package Dependencies
+    - Toggle Features
 
+##### Manage Deployment Pipeline
+- Scale Rollouts
+    - scale rollout is a practice that perform the deploy gradually, controlling subsets of the users in production that receives the new version of the service.
+    - Through this practice it is possivel to monitore and measure the effects of the new deployment, and if necessary rollback to the previous version.
+    - It requires an architectural mecanism (not part of the service being deployed) to route a request from a user to either the new or old service (maybe considering user's identity to perform this routing).
+- Rollback
+    - If defects are discovered after a deployment, thet it can be rollbacked to its prior state. The rollback mechanism must keep track of all updates involved and must be able to revert any consequences made by a defected deployment.
+- Script deployment commands
+    - Deploys usually require a lot of steps and commands do execute. For this reason, deployment is often scripted.
+    - Deploymentscropts shoud be treated like code - reviwed, tested, version controlled and documented. 
+
+##### Manage Deployed System
+- Manage Service Interactions
+    - Allow simultaneous deployment and execution of multiple versions of system services. Request from a client can be directed to either version in any sequence. This behavior may introduce version incompatibilities. In such cases, the interactions between services need to be mediated so that version incompatibilities are proactively avoided.
+- Package dependencies
+    - This tactic packages all elements together (application to be deployed and its dependencies - libraries, OS versions) to be deployed together. 
+    - Example of packaging dependencies are: containers, pods and virtual machines
+- Feature Toggle
+    - Introduction of a "kill switch" (feature toggle) for new features and changes.
+    - The kill switch  disables a feature in the system at runtime, without needing to start a new deployment.
+
+#### Tactics-Based Questionnaire for Deployability
+To gain an overview of the architectural choices made to support deployability, the analyst asks each question and records the answers in the table.
+
+- TODO get table
+
+#### Patterns for Deployability
+- Two categories
+    - (1) Patterns for Structuring Services
+    - (2) Patterns for  how to deploy services
+        - (2.1) all-or-nothing 
+        - (2.2) partial deployment
+##### Patterns for Structuring Services
+- **Microservice Architecture**
