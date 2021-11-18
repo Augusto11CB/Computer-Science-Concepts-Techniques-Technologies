@@ -489,3 +489,10 @@ To gain an overview of the architectural choices made to support deployability, 
         - (2.2) partial deployment
 ##### Patterns for Structuring Services
 - **Microservice Architecture**
+
+### Integrability
+
+### Modifiability
+
+### Testability
+- "A system is testable if it “reveals” its faults easily." (BASS, 2021)
