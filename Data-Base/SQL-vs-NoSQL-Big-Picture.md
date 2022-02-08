@@ -12,7 +12,7 @@
 
 - SQL databases usually deal with structured data that is organized in the form of tables. On the other hand, NoSQL databases, along with support for structured data, offer the convenience of storing unstructured, semi-structured, and polymorphic data as well.
 
-- Database Scaling
+- [Database Scaling](https://softwareengineering.stackexchange.com/questions/194340/why-are-nosql-databases-more-scalable-than-sql)
     - Horizontal scaling means that you scale by adding more machines into your pool of resources whereas
     - Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.
     - Scalability refers to how a database technology adapts to an ever-increasing amount of data without sacrificing performance.
