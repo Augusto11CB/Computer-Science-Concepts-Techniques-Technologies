@@ -57,4 +57,5 @@
 ## Reference
 - [Cap-Theorem](https://www.ibm.com/cloud/learn/cap-theorem)
 - [A Beginner's Reference to SQL vs. NoSQL](https://algodaily.com/lessons/a-beginners-reference-to-sql-vs-nosql)
+- [A plain english introduction to CAP Theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 - [Explanation of BASE terminology](https://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
