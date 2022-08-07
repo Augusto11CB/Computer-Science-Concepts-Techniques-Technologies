@@ -229,7 +229,7 @@ In order to describe **computations that a system must perform** they coined the
     
 ### Quality Attribute Considerations
 - there is two main categories of quality attributes. 
-    - The **first category** contains the attributes that describe **properties** of the **system at runtime**.
+    - The **first category** contains the attributes that describe **properties** of the **system at runtime** (e.g availability, performance, or usability).
     - The **secondy category** includes those attributes that describe **properties** of the **development of the system** (e.g. modifiability, testability, or deployability).
 
 - The achievement of a quality attribute can never be done in isolation. There will be always effects on the others attributes - sometimes positve and sometimes negative.
